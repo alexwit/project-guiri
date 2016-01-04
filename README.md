@@ -8,12 +8,13 @@ Guidi is a platform which connects travellers with local people so they can arra
 
 ##Features
 ###Tourists
-* Get’s a tourits in contact with a local at the place its visiting, even before the tourist is going is at that location.
+* Getâ€™s a tourits in contact with a local at the place its visiting, even before the tourist is going is at that location.
 * Each tourist or guide has his own personal account.
 * The tourist can compare accounts of locals and choose which seems them the  nicest.
 * A rating system in the like of Uber / Couchsurfing to filter out rotten apples. 
 * Possibility to selects on common interests.
 * Acccount verification.
+
 ###Locals
 * Get in contact with people all over the world.
 * A good reason to get to know your city better.
@@ -40,7 +41,7 @@ Guidi is a platform which connects travellers with local people so they can arra
 
 ##Development Problems
 * Really big database. 
-* App get’s really slow because of Maps. 
+* App getâ€™s really slow because of Maps. 
 ** Maybe need to dodge the use of Maps and only use GPS.
 
 
