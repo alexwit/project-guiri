@@ -1,4 +1,4 @@
-# project-guiri
+# project-guidi
 
 
 AppName: Guidi 
