@@ -13,7 +13,7 @@ Guidi is a platform which connects travellers with local people so they can arra
 * The tourist can compare accounts of locals and choose which seems them the  nicest.
 * A rating system in the like of Uber / Couchsurfing to filter out rotten apples. 
 * Possibility to selects on common interests.
-* Acccount verification
+* Acccount verification.
 ###Locals
 * Get in contact with people all over the world.
 * A good reason to get to know your city better.
@@ -51,6 +51,6 @@ Guidi is a platform which connects travellers with local people so they can arra
 * TourPal. 
 
 ##Overview with the activity's 
-![alt text](doc/overzicht.jpg "Summary activitys")
+![alt text](doc/overzicht.JPG "Summary activitys")
 
 
