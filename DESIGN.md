@@ -6,50 +6,50 @@
 
 
 #### List with a class and methods
-Class LogIn:
-getID(username, password, checkPassword).
-	return newUniqueID.	
+Class LogIn
+	getID(username, password, checkPassword)
+		return newUniqueID	
 
-checkID(username, password).
-	return uniqueID (with extra info).
+	checkID(username, password)
+		return uniqueID (with extra info)
 
-Class Account:
+Class Account
 	setIDspecs(name, age, origin, interests,, reviews, photo, availability, specifications)
-		(set Info to database).
-	getName().
-		return name.
-	getAge().
-		return age.
-	getOrigin().
-		return origin.
-	getInterests().
-		return interests.
-	getSpecs().
-		return specifications.
-	getReviews().
-		return reviews.
-	getAvailability().
-		return  availability.
-	getPhoto().
-		return photo.	
+		(set Info to database)
+	getName()
+		return name
+	getAge()
+		return age
+	getOrigin()
+		return origin
+	getInterests()
+		return interests
+	getSpecs()
+		return specifications
+	getReviews()
+		return reviews
+	getAvailability()
+		return  availability
+	getPhoto()
+		return photo	
 
 
-Class Tour:
+Class Tour
 	boolean tourist
 	
 	checkTourist()
 
 
-Class Guide:
+Class Guide
 	giveReview()
 
-Class Tourist:
+Class Tourist
 	sendRequest()
 
 	giveReview()
 
 
-Class Preferences:
+Class Preferences
 	setInterests(StringArray)
 		return userInterests
 	
@@ -60,22 +60,21 @@ Class Preferences:
 		return userDate
 
 	setGroups(Int)
-return userGroups		
+		return userGroups		
 
 	setUserPrefs(userInterests, userSpecs, userDate, userGroups)
 		return userPrefs
 
-Class parser: 
+Class parser
 	getIDinfo()
 	getGuideInfo()
 
 
-Class Search:
-getCity(Database)
-	return DatabaseCity
+Class Search
+	getCity(Database)
+		return DatabaseCity
 	checkSimilarities(DatabaseCity, UserPrefs)
 		return Ordered List with accounts
-	
 
 
 Class Chat
@@ -83,14 +82,10 @@ Class Chat
 	more research is needed for this
 	
 
-
 Class History (Not MVP)
 	later Research 
 	
 	
-
-
-
 
 #### Sketches that show which UI are connected to which class. 
 ![alt text](doc/UI - Class.JPG "UI - class")
