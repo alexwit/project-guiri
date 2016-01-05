@@ -3,8 +3,9 @@
 
 AppName: Guidi 
 
-Guidi is a platform which connects travellers with local people so they can arrange a meeting to show them around or go to events together.
+Guidi is a JAVA based - platform which connects travellers with local people so they can arrange a meeting to show them around or go to events together.
 
+Platform JAVA
 
 ###Features
 #####Tourists
