@@ -6,14 +6,14 @@
 
 
 #### List with a class and methods
-Class LogIn
+	Class LogIn
 	getID(username, password, checkPassword)
 		return newUniqueID	
 
 	checkID(username, password)
 		return uniqueID (with extra info)
 
-Class Account
+	Class Account
 	setIDspecs(name, age, origin, interests,, reviews, photo, availability, specifications)
 		(set Info to database)
 	getName()
@@ -34,22 +34,22 @@ Class Account
 		return photo	
 
 
-Class Tour
+	Class Tour
 	boolean tourist
 	
 	checkTourist()
 
 
-Class Guide
+	Class Guide
 	giveReview()
 
-Class Tourist
+	Class Tourist
 	sendRequest()
 
 	giveReview()
 
 
-Class Preferences
+	Class Preferences
 	setInterests(StringArray)
 		return userInterests
 	
@@ -65,24 +65,24 @@ Class Preferences
 	setUserPrefs(userInterests, userSpecs, userDate, userGroups)
 		return userPrefs
 
-Class parser
+	Class parser
 	getIDinfo()
 	getGuideInfo()
 
 
-Class Search
+	Class Search
 	getCity(Database)
 		return DatabaseCity
 	checkSimilarities(DatabaseCity, UserPrefs)
 		return Ordered List with accounts
 
 
-Class Chat
+	Class Chat (not MVP)
 	use PubNub or Q-municate, 
 	more research is needed for this
 	
 
-Class History (Not MVP)
+	Class History (Not MVP)
 	later Research 
 	
 	
