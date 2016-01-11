@@ -10,9 +10,20 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context=".MainActivity">
+    <item android:id="@+id/action_Main"
+        android:title="Search"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_account"
+        android:title="Account"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
     <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:orderInCategory="100"
-          app:showAsAction="never"/>
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
 </menu>
 <!-- From: file:/C:/Users/Papi%20lexus/Desktop/project-guiri/project-guiri/GUIDI/ParseStarterProject/src/main/res/menu/menu_main.xml -->
