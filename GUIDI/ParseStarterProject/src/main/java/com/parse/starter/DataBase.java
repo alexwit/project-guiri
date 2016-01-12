@@ -23,6 +23,12 @@ public class DataBase extends ParseObject{
         put("completed", complete);
     }
 
+    public Integer getAge() {
+        return getInt("age");
+    }
+
+    public void setAge(Integer age) {put("age", age); }
+
     public String getName(){
         return getString("name");
     }

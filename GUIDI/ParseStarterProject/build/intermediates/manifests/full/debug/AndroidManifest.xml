@@ -46,8 +46,7 @@
         <activity
             android:name="com.parse.starter.Login"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.parse.starter.Register" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,6 +55,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.parse.starter.Account" />
+        <activity android:name="com.parse.starter.ChangeAccount" />
     </application>
 
 </manifest>

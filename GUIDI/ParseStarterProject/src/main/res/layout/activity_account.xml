@@ -13,16 +13,17 @@
         android:orientation="horizontal" >
 
         <TextView
+            android:padding="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Username:"
             android:textSize="25dp" />
 
-        <EditText
+        <TextView
             android:layout_width="0dp"
+            android:textSize="25dp"
             android:layout_height="wrap_content"
             android:id="@+id/account_username"
-            android:inputType="textPersonName"
             android:layout_weight="1" />
 
     </LinearLayout>
@@ -34,13 +35,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="15dp"
             android:text="Age:"
             android:textSize="25dp"/>
 
-        <EditText
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:textSize="25dp"
             android:id="@+id/account_age"
             android:layout_weight="1" />
     </LinearLayout>
@@ -49,7 +51,7 @@
     android:id="@+id/submit_button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:onClick="changeAccount"
-    android:text="Submit Changes" />
+    android:onClick="toChangeAccount"
+    android:text="Change Account Specs" />
 
 </LinearLayout>
