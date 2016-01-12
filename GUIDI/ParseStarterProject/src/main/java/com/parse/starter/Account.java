@@ -11,6 +11,7 @@ import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 public class Account extends AppCompatActivity {
 
@@ -31,12 +32,14 @@ public class Account extends AppCompatActivity {
         mAgeUser = (TextView)findViewById(R.id.account_age);
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("DataBase");
-        query.getInBackground("N1rmSxS7ps", new GetCallback<ParseObject>() {
+        query.whereEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
+
+        query.getInBackground(ParseUser.getCurrentUser().getObjectId(), new GetCallback<ParseObject>() {
             public void done(ParseObject object, ParseException e) {
                 if (e == null) {
                     // Gets Account specifications from Parse
                     name = object.getString("name");
-                    if(name != null) {
+                    if (name != null) {
                         mNameUser.setText(name);
                     }
                     //age = object.getInt("age");
@@ -45,7 +48,7 @@ public class Account extends AppCompatActivity {
 //                    }
                 } else {
                     // something went wrong
-                    Log.e("Account","did not get new name " + object.getString("name"));
+                    Log.e("Account", "did not get new name " + object.getString("name"));
                 }
             }
         });

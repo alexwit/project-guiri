@@ -9,6 +9,9 @@ import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+
+//http://blog.parse.com/announcements/parse-on-android-just-got-classier/
+
 @ParseClassName("DataBase")
 public class DataBase extends ParseObject{
     public DataBase(){

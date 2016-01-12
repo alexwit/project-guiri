@@ -39,7 +39,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void done(ParseException e) {
                 if (e == null) {
-                    Intent intent = new Intent(Register.this, MainActivity.class);
+                    Intent intent = new Intent(Register.this, NewAccount.class);
                     startActivity(intent);
                     finish();
                 } else {

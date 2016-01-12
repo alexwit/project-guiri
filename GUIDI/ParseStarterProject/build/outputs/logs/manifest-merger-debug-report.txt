@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:9:1-54:12
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:9:1-55:12
 	xmlns:android
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:9:11-69
 	package
@@ -22,7 +22,7 @@ ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseSt
 	android:name
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:13:22-76
 application
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:15:5-52:19
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:15:5-53:19
 MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\design\22.2.1\AndroidManifest.xml:22:5-20
@@ -58,7 +58,7 @@ ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseSt
 	android:name
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:29:13-41
 activity#com.parse.starter.Login
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:39:9-42:68
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:39:9-42:59
 	android:label
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:41:13-57
 	android:theme
@@ -84,9 +84,13 @@ ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseSt
 	android:name
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:50:19-42
 activity#com.parse.starter.ChangeAccount
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:51:9-60
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:51:9-51
 	android:name
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:51:19-48
+activity#com.parse.starter.NewAccount
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:52:9-57
+	android:name
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:52:19-45
 uses-sdk
 INJECTED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\AndroidManifest.xml:20:5-43
