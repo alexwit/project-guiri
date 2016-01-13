@@ -3,13 +3,11 @@ package com.parse.starter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.parse.ParseObject;
-import com.parse.ParseUser;
 
 public class NewAccount extends AppCompatActivity {
 
@@ -32,7 +30,7 @@ public class NewAccount extends AppCompatActivity {
         mCountryUserField = (EditText)findViewById(R.id.newaccount_country);
         mCityUserField = (EditText)findViewById(R.id.newaccount_city);
     }
-
+// Creates a new database for Profiles
     public void createAccount(View v){
         // todo make check for letters in username and think of more checks
 
@@ -43,26 +41,57 @@ public class NewAccount extends AppCompatActivity {
             Toast.makeText(NewAccount.this, "Your input is incorrect", Toast.LENGTH_SHORT).show();
             return;}
 
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        Log.i("New Account", currentUser.toString());
-        if(currentUser != null) {
-            currentUser.put("First_name", "hoi");
-            currentUser.put("Surname", (mSurnameField.getText().toString()));
-            currentUser.put("Age", mAgeUserField.getInputType());
-            currentUser.put("Country", mCountryUserField.getText().toString());
-            currentUser.put("City", mCityUserField.getText().toString());
-            currentUser.saveInBackground();
-        }
-        else{
-            Toast.makeText(NewAccount.this, "There is something wrong!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, Login.class);
-            startActivity(intent);
-        }
-
+        DataBase t = new DataBase();
+        t.setName(mFirstNameField.getText().toString());
+        t.setAge(Integer.parseInt(mAgeUserField.getText().toString()));
+        t.setCity(mCityUserField.getText().toString());
+        t.setCountry(mCountryUserField.getText().toString());
+        t.setCompleted(false);
+        t.saveEventually();
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+
+//        else{
+//            Toast.makeText(NewAccount.this, "There is something wrong!", Toast.LENGTH_SHORT).show();
+//            Intent intent = new Intent(this, Login.class);
+//            startActivity(intent);
+//        }
     }
+
+
+
+//  Creates user account with object info implemented in user info
+//    public void createAccount(View v){
+//        // todo make check for letters in username and think of more checks
+//
+//        if (mFirstNameField.getText().length() == 0 || mAgeUserField.getText().length() == 0
+//                || Integer.parseInt(mAgeUserField.getText().toString()) < 18
+//                || mSurnameField.getText().length() == 0 ||
+//                mCountryUserField.getText().length() == 0 || mCityUserField.getText().length() == 0){
+//            Toast.makeText(NewAccount.this, "Your input is incorrect", Toast.LENGTH_SHORT).show();
+//            return;}
+//
+//        ParseUser currentUser = ParseUser.getCurrentUser();
+//        Log.i("New Account", currentUser.toString());
+//        if(currentUser != null) {
+//            currentUser.put("First_name", "hoi");
+//            currentUser.put("Surname", (mSurnameField.getText().toString()));
+//            currentUser.put("Age", mAgeUserField.getInputType());
+//            currentUser.put("Country", mCountryUserField.getText().toString());
+//            currentUser.put("City", mCityUserField.getText().toString());
+//            currentUser.saveInBackground();
+//        }
+//        else{
+//            Toast.makeText(NewAccount.this, "There is something wrong!", Toast.LENGTH_SHORT).show();
+//            Intent intent = new Intent(this, Login.class);
+//            startActivity(intent);
+//        }
+//
+//
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+//    }
 
 
 

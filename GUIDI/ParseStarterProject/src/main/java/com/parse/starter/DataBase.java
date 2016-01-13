@@ -40,6 +40,14 @@ public class DataBase extends ParseObject{
         put("name", name);
     }
 
+    public  void setCountry(String country){put("country", country);}
+
+    public String getCountry(){return getString("country");}
+
+    public void setCity(String city){put("city", city);}
+
+    public String getCity(){return getString("city");}
+
     public ParseUser getUser() {
         return getParseUser("User");
     }
