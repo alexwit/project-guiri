@@ -43,6 +43,18 @@
             android:ems="10"
             android:inputType="textPassword" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email:"/>
+
+        <EditText
+            android:id="@+id/register_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"/>
+
+
         <Button
             android:id="@+id/sign_up"
             android:layout_width="wrap_content"
@@ -58,6 +70,7 @@
         android:layout_height="wrap_content"
         android:textSize="17sp"
         android:onClick="showLogin"
-        android:text="Already Have An Account? Log In!" />
+        android:text="Already have an account?!" />
+
 
 </LinearLayout>

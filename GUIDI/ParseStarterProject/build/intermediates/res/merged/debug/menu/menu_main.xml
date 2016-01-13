@@ -25,5 +25,10 @@
         android:orderInCategory="100"
         app:showAsAction="never"/>
 
+    <item android:id="@+id/action_logout"
+        android:title="Log out"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
 </menu>
 <!-- From: file:/C:/Users/Papi%20lexus/Desktop/project-guiri/project-guiri/GUIDI/ParseStarterProject/src/main/res/menu/menu_main.xml -->

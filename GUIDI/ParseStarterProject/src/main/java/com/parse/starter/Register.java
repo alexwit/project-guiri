@@ -14,6 +14,9 @@ import com.parse.SignUpCallback;
 public class Register extends AppCompatActivity {
     EditText mUsernameField;
     EditText mPasswordField;
+    EditText mEmailField;
+    Intent intent;
+
 
 
     @Override
@@ -21,19 +24,34 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+//        if(ParseUser.getCurrentUser().getUsername() == null){
+////            intent = new Intent(this, Login.class);
+//        }else{
+//            Log.i("REgister", "currentUser not null");
+//            intent = new Intent(this, MainActivity.class);
+//        }
+//
+//        startActivity(intent);
+
         mUsernameField = (EditText)findViewById(R.id.register_username);
         mPasswordField = (EditText)findViewById(R.id.register_password);
+        mEmailField = (EditText)findViewById(R.id.register_email);
+
 
     }
 
     public void register(final View v) {
-        if (mUsernameField.getText().length() == 0 || mPasswordField.getText().length() == 0)
+        if (mUsernameField.getText().length() == 0 || mPasswordField.getText().length() == 0 )
+          //|| mEmailField.getText().length() == 0
+
             return;
 
         v.setEnabled(false);
         ParseUser user = new ParseUser();
         user.setUsername(mUsernameField.getText().toString());
         user.setPassword(mPasswordField.getText().toString());
+        user.setEmail(mEmailField.getText().toString());
+
 
         user.signUpInBackground(new SignUpCallback() {
             @Override
@@ -54,6 +72,9 @@ public class Register extends AppCompatActivity {
                                 break;
                             case ParseException.PASSWORD_MISSING:
                                 Toast.makeText(Register.this, "Sorry, you must supply a password", Toast.LENGTH_SHORT).show();
+                                break;
+                            case ParseException.EMAIL_TAKEN:
+                                Toast.makeText(Register.this, "Sorry, this email adress is allready taken", Toast.LENGTH_SHORT).show();
                                 break;
                             case ParseException.OBJECT_NOT_FOUND:
                                 Toast.makeText(Register.this, "Those credentials were invalid", Toast.LENGTH_SHORT).show();

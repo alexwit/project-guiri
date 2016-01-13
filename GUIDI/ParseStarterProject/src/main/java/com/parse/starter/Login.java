@@ -26,6 +26,12 @@ public class Login extends AppCompatActivity {
 
     }
 
+    public void goToRegister(View v){
+        Intent intent = new Intent(this, Register.class);
+        startActivity(intent);
+        finish();
+    }
+
 
     public void logIn(final View v){
         v.setEnabled(false);
@@ -33,6 +39,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void done(ParseUser user, ParseException e) {
                 if (user != null) {
+
                     Intent intent = new Intent(Login.this, MainActivity.class);
                     startActivity(intent);
                     finish();
