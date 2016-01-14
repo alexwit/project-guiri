@@ -1,41 +1,45 @@
 package com.parse.starter;
 
+import android.util.Log;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
+import java.util.List;
+
 /**
  * Created by Papi lexus on 13-1-2016.
  */
 public class Search {
-//
-//    public String findUser(String country, String city) {
-//
-//        ParseQuery<ParseUser> query = ParseUser.getQuery();
-//        query.whereEqualTo("username", user);
-//        query.getFirstInBackground(someUserId, new GetCallback<ParseUser>() {
-//            public void done(ParseUser user, ParseException e) {
-//                if (e == null) {
-//                    // The query was successful.
-//                    // check if we got a match
-//                    if (user == null) {
-//                        // no matching user!
-//                    } else {
-//                        // great, get the name etc
-//                    }
-//                } else {
-//                    // Something went wrong.
-//                }
-//            }
-//        });
-//    }
-//    ParseQuery<ParseUser> query = ParseUser.getQuery();
-//
-//    query.findInBackground(new FindCallback<ParseUser>() {
-//        public void done(List<ParseUser> objects, ParseException e) {
-//            if (e == null) {
-//                // The query was successful.
-//            } else {
-//                // Something went wrong.
-//            }
-//        }
-//    });
+
+
+    List<ParseUser> locals = null;
+
+
+    public List<ParseUser> searchUsers(String city){
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        query.whereEqualTo("City", city);
+        query.findInBackground(new FindCallback<ParseUser>() {
+            public void done(List<ParseUser> userList, ParseException e) {
+                if (e == null) {
+                    Log.i("main", "inside if loop" + userList);
+
+                    for (ParseUser user : userList) {
+                        Log.i("main", "inside for loop");
+                        String username = user.getString("username");
+                        Log.i("main", "username " + username);
+
+                    }
+                    locals = userList;
+                } else {
+                    Log.d("score", "Error: " + e.getMessage());
+                }
+            }
+        });
+        return locals;
+    }
 
 
 }

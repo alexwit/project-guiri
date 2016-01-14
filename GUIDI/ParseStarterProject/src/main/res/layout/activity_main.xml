@@ -30,7 +30,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnSearchCity"
-                android:onClick="searchCity"/>
+                android:onClick="searchCity"
+                android:text="Search"/>
 
         </LinearLayout>
     </LinearLayout>

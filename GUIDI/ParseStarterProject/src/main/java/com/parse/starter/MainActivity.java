@@ -16,21 +16,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import com.parse.FindCallback;
 import com.parse.ParseAnalytics;
-import com.parse.ParseException;
-import com.parse.ParseQuery;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
 
-    List locals = null;
-
+    Search search;
     EditText mCityField;
+    List<ParseUser> mAccountList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,40 +42,30 @@ public class MainActivity extends ActionBarActivity {
         mCityField = (EditText)findViewById(R.id.mCityField);
 
 
-
-
-
     }
-
 
     public void searchCity(View v){
-        searchUsers(mCityField.getText().toString());
-        Log.i("main", "succesfully searched yo mamma");
+        if(mCityField.getText().toString().length()!=0){
+            mAccountList = search.searchUsers(mCityField.getText().toString());
+
+            Log.i("main", "succesfully searched yo mamma");
+        }
+        else{
+            Toast.makeText(MainActivity.this, "You did not enter a city!", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    public void searchUsers(String city){
-        List userList;
-        ParseQuery<ParseUser> query = ParseQuery.getQuery("DataBase");
-        query.whereEqualTo("city", city);
-        query.findInBackground(new FindCallback<ParseUser>() {
-            public void done(List<ParseUser> userList, ParseException e) {
-                if (e == null) {
-                    Log.d("Main", "Retrieved " + userList.size() + "users");
-                    locals = userList;
-                } else {
-                    Log.d("score", "Error: " + e.getMessage());
-                }
-            }
-        });
-        Log.i("main", "list first " + locals.get(0).toString() );
-    }
+
+    ArrayList<ParseObject> ObjectList;
+
+
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-      // Inflate the menu; this adds items to the action bar if it is present.
-      getMenuInflater().inflate(R.menu.menu_main, menu);
-      return true;
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     @Override
