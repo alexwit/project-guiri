@@ -18,8 +18,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.ParseAnalytics;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
@@ -44,10 +47,32 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    private List<ParseObject> localsList;
+
+
     public void searchCity(View v){
         if(mCityField.getText().toString().length()!=0){
-            mAccountList = search.searchUsers(mCityField.getText().toString());
+            ParseQuery query = ParseQuery.getQuery("DataBase");
+            query.whereEqualTo("City", "Amsterdam");
+            query.findInBackground(new FindCallback<ParseObject>() {
+                public void done(List<ParseObject> userList, ParseException e) {
+                    if (e == null) {
+                        Log.i("main", "inside if loop" + userList);
 
+                        for (ParseObject user : userList) {
+                            Log.i("main", "inside for loop");
+                            String username = user.getString("username");
+                            Log.i("main", "username " + username);
+
+                        }
+                        localsList = userList;
+
+
+                    } else {
+                        Log.d("score", "Error: " + e.getMessage());
+                    }
+                }
+            });
             Log.i("main", "succesfully searched yo mamma");
         }
         else{

@@ -15,7 +15,7 @@ import java.util.List;
 public class Search {
 
 
-    List<ParseUser> locals = null;
+    List<ParseUser> localsList = null;
 
 
     public List<ParseUser> searchUsers(String city){
@@ -32,13 +32,16 @@ public class Search {
                         Log.i("main", "username " + username);
 
                     }
-                    locals = userList;
+                    localsList = userList;
+
+//                    mainAdapter = new ParseQueryAdapter<ParseUser>(this, localsList);
+
                 } else {
                     Log.d("score", "Error: " + e.getMessage());
                 }
             }
         });
-        return locals;
+        return localsList;
     }
 
 

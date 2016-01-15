@@ -1,17 +1,12 @@
 package com.parse.starter;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.parse.ParseFile;
 import com.parse.ParseObject;
-import com.parse.ParseUser;
-
-import java.util.List;
+import com.parse.ParseQuery;
 
 /**
  * Created by Papi lexus on 14-1-2016.
@@ -19,37 +14,70 @@ import java.util.List;
 
 // http://michaelevans.org/blog/2013/08/14/tutorial-building-an-android-to-do-list-app-using-parse/
 
-public class ProfileAdapter extends ArrayAdapter<Search> {
+public class ProfileAdapter extends ParseQueryAdapter {
 
-    private Context mContext;
-    private List<ParseUser> mAccounts;
 
-    public ProfileAdapter(Context context, List<ParseObject> objects) {
-        super(context, R.layout.account_rows, objects);
-        this.mContext = context;
-        this.mAccounts = objects;
-    }
-    public View getView(int position, View convertView, ViewGroup parent){
-        if(convertView == null){
-            LayoutInflater mLayoutInflater = LayoutInflater.from(mContext);
-            convertView = mLayoutInflater.inflate(R.layout.account_rows, null);
+
+
+
+
+    // Customize the layout by overriding getItemView
+
+
+    @Override
+    public View getItemView(ParseObject object, View v, ViewGroup parent) {
+        if (v == null) {
+            v = View.inflate(getContext(), R.layout.urgent_item, null);
         }
 
+        super.getItemView(object, v, parent);
 
-        Search profile = mAccounts.get(position);
-
-        TextView descriptionView = (TextView) convertView.findViewById(R.id.account_description);
-
-        descriptionView.setText(profile.getString());
-
-        if(task.isCompleted()){
-            descriptionView.setPaintFlags(descriptionView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        }else{
-            descriptionView.setPaintFlags(descriptionView.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+        // Add and download the image
+        ParseImageView todoImage = (ParseImageView) v.findViewById(R.id.icon);
+        ParseFile imageFile = object.getParseFile("image");
+        if (imageFile != null) {
+            todoImage.setParseFile(imageFile);
+            todoImage.loadInBackground();
         }
 
-        return convertView;
+        // Add the title view
+        TextView titleTextView = (TextView) v.findViewById(R.id.text1);
+        titleTextView.setText(object.getString("title"));
+
+        // Add a reminder of how long this item has been outstanding
+        TextView timestampView = (TextView) v.findViewById(R.id.timestamp);
+        timestampView.setText(object.getCreatedAt().toString());
+
+        return v;
     }
 
+
+
+
+
+
+
+//    private List<ParseUser> mUserList;
+//
+//    public ProfileAdapter(Context context, QueryFactory<ParseObject> queryFactory) {
+//        super(context, queryFactory);
+//    }
+//
+//    @Override
+//    public View getItemView(final ParseUser user, View v, ViewGroup parent) {
+//    // build your views
+//    }
+//
+//    public void setData(List<ParseUser> userList) {
+//        mUserList = userList;
+//        notifyDataSetChanged();
+//    }
+//
+//    @Override
+//    public int getCount() {
+//        return mUserList.size();
+//    }
 }
-}
+
+
+
