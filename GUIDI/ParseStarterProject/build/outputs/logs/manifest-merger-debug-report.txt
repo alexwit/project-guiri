@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:9:1-55:12
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:9:1-59:12
 	xmlns:android
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:9:11-69
 	package
@@ -22,9 +22,10 @@ ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseSt
 	android:name
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:13:22-76
 application
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:15:5-53:19
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:15:5-57:19
 MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:22:5-20
+MERGED from [com.parse:parseui-widget-android:0.0.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.parse\parseui-widget-android\0.0.1\AndroidManifest.xml:31:5-20
 MERGED from [com.android.support:design:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\design\22.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:22:5-20
@@ -88,13 +89,22 @@ ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseSt
 	android:name
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:51:19-48
 activity#com.parse.starter.NewAccount
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:52:9-57
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:52:9-48
 	android:name
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:52:19-45
+activity#com.parse.starter.SearchList
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:53:9-56:68
+	android:label
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:55:13-63
+	android:theme
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:56:13-56
+	android:name
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:54:13-39
 uses-sdk
 INJECTED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:20:5-43
+MERGED from [com.parse:parseui-widget-android:0.0.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.parse\parseui-widget-android\0.0.1\AndroidManifest.xml:27:5-29:41
 MERGED from [com.android.support:design:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\design\22.2.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:20:5-43

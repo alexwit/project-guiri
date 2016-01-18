@@ -1,10 +1,12 @@
 package com.parse.starter;
 
+import android.app.ListActivity;
 import android.util.Log;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.ParseQueryAdapter;
 import com.parse.ParseUser;
 
 import java.util.List;
@@ -12,12 +14,20 @@ import java.util.List;
 /**
  * Created by Papi lexus on 13-1-2016.
  */
-public class Search {
-
+public class Search extends ListActivity {
 
     List<ParseUser> localsList = null;
 
+//    public void setListView(String city){
+//        ProfileAdapter mainAdapter = new ProfileAdapter(this, city);
+//
+//        mainAdapter.setTextKey("name");
+//
+//        setListAdapter(mainAdapter);
+//    }
 
+
+//
     public List<ParseUser> searchUsers(String city){
         ParseQuery<ParseUser> query = ParseUser.getQuery();
         query.whereEqualTo("City", city);
@@ -34,7 +44,12 @@ public class Search {
                     }
                     localsList = userList;
 
-//                    mainAdapter = new ParseQueryAdapter<ParseUser>(this, localsList);
+                    ParseQueryAdapter mainAdapter = new ProfileAdapter(Search.this, localsList);
+                    mainAdapter.setTextKey("name");
+//                    mainAdapter.setImageKey("image");
+
+// Set the ListActivity's adapter to be the PQA
+                    setListAdapter(mainAdapter);
 
                 } else {
                     Log.d("score", "Error: " + e.getMessage());
@@ -43,6 +58,5 @@ public class Search {
         });
         return localsList;
     }
-
 
 }

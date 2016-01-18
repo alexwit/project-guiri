@@ -57,6 +57,10 @@
         <activity android:name="com.parse.starter.Account" />
         <activity android:name="com.parse.starter.ChangeAccount" />
         <activity android:name="com.parse.starter.NewAccount" />
+        <activity
+            android:name="com.parse.starter.SearchList"
+            android:label="@string/title_activity_search_list"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

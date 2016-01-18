@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 public class NewAccount extends AppCompatActivity {
@@ -24,7 +23,7 @@ public class NewAccount extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_account);
-        ParseObject.registerSubclass(DataBase.class);
+
 
         mFirstNameField = (EditText)findViewById(R.id.newaccount_firstname);
         mSurnameField = (EditText)findViewById(R.id.newaccount_surname);
