@@ -17,3 +17,13 @@ en weer kan veranderen. Het is nu gelukt om info toe te voegen maar dan wordt ie
 
 #Day 4
 Heb ondervonden dat het downloaden van info uit de data base te doen is maar alleen met een gehardcode object. Ben er nog niet achter hoe je dit interactief kan maken. Ook heb ik bedacht dat gelijk na het Registeren het nodig is om alle info in te vullen die nodig zijn bij een account. Anders kom je iedere keer in de problemen als je de account gegevens wilt aanpassen. 
+
+#Day 5
+Het lukt om de data aan te passen en toe te voegen. Maar het lukt nog niet om een lijst met account namen te returnen van bijvoorbeeld eenspecifieke stad. Nadat ik eerst alle account informatie wilde  koppelen aan de data base. Heb ik er toch voor gekozen om bepaalde informatie als naam en stad aan het User account direct te koppelen en secundaire info als interesses en reviews in de data base te stoppen. 
+
+#Day 6 
+
+Het lukt om een een lijst met ParseUsers te returnen uit een specifieke stad maar het lukt nog niet om deze uit te beelden in een List View. 
+
+#Day 7
+Hang al 2 dagen bij het correct in beeld brengen van de userlist!! 
