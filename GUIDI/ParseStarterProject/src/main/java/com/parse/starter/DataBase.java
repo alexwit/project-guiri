@@ -22,6 +22,10 @@ public class DataBase extends ParseObject{
         return getBoolean("completed");
     }
 
+    public String getId() {
+        return getObjectId();
+    }
+
     public void setCompleted(boolean complete){
         put("completed", complete);
     }

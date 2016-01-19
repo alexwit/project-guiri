@@ -19,7 +19,7 @@
             android:text="Username:"
             android:textSize="25dp" />
 
-        <EditText
+        <TextView
             android:layout_width="0dp"
             android:textSize="25dp"
             android:layout_height="wrap_content"
@@ -39,12 +39,11 @@
             android:text="Age:"
             android:textSize="25dp"/>
 
-        <EditText
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="25dp"
             android:id="@+id/account_age"
-            android:inputType="number"
             android:layout_weight="1" />
     </LinearLayout>
 
@@ -52,9 +51,8 @@
         android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="changeAccount"
-        android:text="Submit Changes"
-        android:clickable="true" />
+        android:onClick="toChangeAccount"
+        android:text="Change Account Specs" />
 
 </LinearLayout>
-<!-- From: file:/C:/Users/Papi%20lexus/Desktop/project-guiri/project-guiri/GUIDI/ParseStarterProject/src/main/res/layout/activity_change_account.xml -->
+<!-- From: file:/C:/Users/Papi%20lexus/Desktop/project-guiri/project-guiri/GUIDI/ParseStarterProject/src/main/res/layout/activity_guide_account.xml -->

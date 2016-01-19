@@ -48,45 +48,12 @@ public class MainActivity extends ActionBarActivity {
 
     public void searchCity(View v){
 
-
-
         if(mCityField.getText().toString().length()!=0) {
 
-//            ProfileAdapter mainAdapter = new ProfileAdapter(this, mCityField.getText().toString());
-//
-//
-//            ListActivity henk = new ListActivity();
-//            henk.setListAdapter(mainAdapter);
-//
-//            mainAdapter.setTextKey("name");
-            Intent intent = new Intent(this, Search.class);
-            intent.putExtra("City", mCityField.toString());
+            Intent intent = new Intent(this, SearchList.class);
+            intent.putExtra("City", mCityField.getText().toString());
             startActivity(intent);
         }
-//
-//            ParseQuery query = ParseQuery.getQuery("DataBase");
-//            query.whereEqualTo("City", "Amsterdam");
-//            query.findInBackground(new FindCallback<ParseObject>() {
-//                public void done(List<ParseObject> userList, ParseException e) {
-//                    if (e == null) {
-//                        Log.i("main", "inside if loop" + userList);
-//
-//                        for (ParseObject user : userList) {
-//                            Log.i("main", "inside for loop");
-//                            String username = user.getString("username");
-//                            Log.i("main", "username " + username);
-//
-//                        }
-//                        localsList = userList;
-//
-//
-//                    } else {
-//                        Log.d("score", "Error: " + e.getMessage());
-//                    }
-//                }
-//            });
-//            Log.i("main", "succesfully searched yo mamma");
-//        }
         else{
             Toast.makeText(MainActivity.this, "You did not enter a city!", Toast.LENGTH_SHORT).show();
         }

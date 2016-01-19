@@ -31,7 +31,7 @@ public class NewAccount extends AppCompatActivity {
         mCountryUserField = (EditText)findViewById(R.id.newaccount_country);
         mCityUserField = (EditText)findViewById(R.id.newaccount_city);
     }
-// Creates a new database for Profiles
+//// Creates a new database for Profiles
 //    public void createAccount(View v){
 //        // todo make check for letters in username and think of more checks
 //
@@ -76,9 +76,9 @@ public class NewAccount extends AppCompatActivity {
         ParseUser currentUser = ParseUser.getCurrentUser();
         Log.i("New Account", currentUser.toString());
         if(currentUser != null) {
-            currentUser.put("First_name", "hoi");
+            currentUser.put("First_name", mFirstNameField.getText().toString());
             currentUser.put("Surname", (mSurnameField.getText().toString()));
-            currentUser.put("Age", mAgeUserField.getInputType());
+            currentUser.put("Age",Integer.parseInt(mAgeUserField.getText().toString()));
             currentUser.put("Country", mCountryUserField.getText().toString());
             currentUser.put("City", mCityUserField.getText().toString());
             currentUser.saveInBackground();
