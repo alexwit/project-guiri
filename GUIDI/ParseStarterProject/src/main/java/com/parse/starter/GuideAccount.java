@@ -59,6 +59,29 @@ public class GuideAccount extends AppCompatActivity {
     }
 
     public void sendEmail(View view) {
+        // todo IK SNAP HIER GEEN Coño van
+//        JSONObject data = new JSONObject();
+//        try {
+//            data.put("action", "com.bt.yana.GOT_MESSAGE");
+//            data.put("from", ParseUser.getCurrentUser().getUsername());
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            return;
+//        }
+//
+//
+//        ParsePush parsePush = new ParsePush();
+//        parsePush.setData(data);
+//
+//        ParseQuery<ParseInstallation> parseQuery = ParseQuery.getQuery(ParseInstallation.class);
+//        if(toUser!=null) {
+//            parseQuery.whereEqualTo("username", toUser);
+//            parsePush.setQuery(parseQuery);
+//            parsePush.sendInBackground();
+//        }
+
+
+
     }
 
     public void getReviews(View view) {
