@@ -27,3 +27,27 @@ Het lukt om een een lijst met ParseUsers te returnen uit een specifieke stad maa
 
 #Day 7
 Hang al 2 dagen bij het correct in beeld brengen van de userlist!! 
+
+#Day 8 
+Probleem in kaart brengen userlist opgelost doormiddel van nieuwe update van Parse stond de ParseQueryFactory niet meer in de standaard library maar moest hier een extra library voor worden toegevoegd. Stond erg slecht aan gegeven in de documentatie. Gelukkig kwam stackoverflow met een reactie.
+
+#Day 9 
+uit eenzetting van een queryfactory naar een list is lastig. Zeker als vervolgens uit die lijst weer de Parse informatie van dat account moet worden opgehaald.
+
+#Day 10
+Het is niet mogelijk om data te koppelen aan een item van de list. Hierdoor was het niet mogelijk om de objectId informatie van de andere user mee te geven. Als oplossing is een onclicklistener toegevoegd aan het item waardoor je gelijk wordt doorgestuurd met de account informatie en deze kan aanpassen. 
+
+#Day 11
+Hele dag aan HEURISTIEKEN GEZETEN
+
+#Day 12 
+Hele dag aan heuristieen gezeten
+
+#Day 23
+Push notification geimplementeerd maar het lukt niet om deze naar individuele accounts te sturen. Op gegeven en alle code verwijdert en terug gekeerd naar oude commit omdat code totaal overhoop was.
+
+#Day 24
+Probeer informatie aan andere accounts toe te voegen maar dat mag niet door doordat user "not authenticated" is. Moet een manier vinden zodat ik informatie aan andere users kan toepassen zodat ik afspraken kan maken. 
+
+
+
