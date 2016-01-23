@@ -11,6 +11,8 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import java.util.Collections;
+
 public class Register extends AppCompatActivity {
     EditText mUsernameField;
     EditText mPasswordField;
@@ -51,7 +53,7 @@ public class Register extends AppCompatActivity {
         user.setUsername(mUsernameField.getText().toString());
         user.setPassword(mPasswordField.getText().toString());
         user.setEmail(mEmailField.getText().toString());
-
+        user.put("Requests", Collections.emptyList());
 
         user.signUpInBackground(new SignUpCallback() {
             @Override

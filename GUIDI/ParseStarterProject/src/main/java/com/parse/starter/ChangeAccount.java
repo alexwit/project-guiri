@@ -46,7 +46,7 @@ public class ChangeAccount extends AppCompatActivity {
 
         // Retrieve the object by id
 //        Log.i("changeaccount ", "id is " + account.getId().toString());
-        query.getInBackground(ParseUser.getCurrentUser().getObjectId().toString(), new GetCallback<ParseObject>() {
+        query.getInBackground(ParseUser.getCurrentUser().getObjectId(), new GetCallback<ParseObject>() {
             public void done(ParseObject object, ParseException e) {
                 if (e == null) {
 
