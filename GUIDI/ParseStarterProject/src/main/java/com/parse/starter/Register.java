@@ -11,8 +11,6 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
-import java.util.Collections;
-
 public class Register extends AppCompatActivity {
     EditText mUsernameField;
     EditText mPasswordField;
@@ -53,7 +51,7 @@ public class Register extends AppCompatActivity {
         user.setUsername(mUsernameField.getText().toString());
         user.setPassword(mPasswordField.getText().toString());
         user.setEmail(mEmailField.getText().toString());
-        user.put("Requests", Collections.emptyList());
+
 
         user.signUpInBackground(new SignUpCallback() {
             @Override
@@ -63,28 +61,28 @@ public class Register extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else {
-                        // Sign up didn't succeed. Look at the ParseException
-                        // to figure out what went wrong
-                        switch(e.getCode()) {
-                            case ParseException.USERNAME_TAKEN:
-                                Toast.makeText(Register.this, "Sorry, this username has already been taken", Toast.LENGTH_SHORT).show();
-                                break;
-                            case ParseException.USERNAME_MISSING:
-                                Toast.makeText(Register.this, "Sorry, you must supply a username", Toast.LENGTH_SHORT).show();
-                                break;
-                            case ParseException.PASSWORD_MISSING:
-                                Toast.makeText(Register.this, "Sorry, you must supply a password", Toast.LENGTH_SHORT).show();
-                                break;
-                            case ParseException.EMAIL_TAKEN:
-                                Toast.makeText(Register.this, "Sorry, this email adress is allready taken", Toast.LENGTH_SHORT).show();
-                                break;
-                            case ParseException.OBJECT_NOT_FOUND:
-                                Toast.makeText(Register.this, "Those credentials were invalid", Toast.LENGTH_SHORT).show();
-                                break;
-                            default:
-                                Toast.makeText(Register.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                                break;
-                        }
+                    // Sign up didn't succeed. Look at the ParseException
+                    // to figure out what went wrong
+                    switch (e.getCode()) {
+                        case ParseException.USERNAME_TAKEN:
+                            Toast.makeText(Register.this, "Sorry, this username has already been taken", Toast.LENGTH_SHORT).show();
+                            break;
+                        case ParseException.USERNAME_MISSING:
+                            Toast.makeText(Register.this, "Sorry, you must supply a username", Toast.LENGTH_SHORT).show();
+                            break;
+                        case ParseException.PASSWORD_MISSING:
+                            Toast.makeText(Register.this, "Sorry, you must supply a password", Toast.LENGTH_SHORT).show();
+                            break;
+                        case ParseException.EMAIL_TAKEN:
+                            Toast.makeText(Register.this, "Sorry, this email adress is allready taken", Toast.LENGTH_SHORT).show();
+                            break;
+                        case ParseException.OBJECT_NOT_FOUND:
+                            Toast.makeText(Register.this, "Those credentials were invalid", Toast.LENGTH_SHORT).show();
+                            break;
+                        default:
+                            Toast.makeText(Register.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                            break;
+                    }
                     v.setEnabled(true);
                 }
             }

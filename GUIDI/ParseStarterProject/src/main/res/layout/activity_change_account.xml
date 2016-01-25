@@ -48,6 +48,20 @@
             android:layout_weight="1" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/CB_art"
+            android:clickable="true"
+            android:text="Art"
+            android:checked="false" />
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/submit_button"
         android:layout_width="wrap_content"

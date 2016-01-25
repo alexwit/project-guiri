@@ -41,8 +41,8 @@ public class ChangeAccount extends AppCompatActivity {
 
     public void changeAccount(View v) {
 
-        final DataBase account = new DataBase();
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("DataBase");
+//        final DataBase account = new DataBase();
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
 
         // Retrieve the object by id
 //        Log.i("changeaccount ", "id is " + account.getId().toString());
@@ -51,12 +51,12 @@ public class ChangeAccount extends AppCompatActivity {
                 if (e == null) {
 
                     if (mNameUser.getText().length() <= 0 || !(mNameUser.getText().equals(name))) {
-                        account.put("name", mNameUser.getText().toString());
+                        object.put("First_name", mNameUser.getText().toString());
 
                     } else if (mAgeUser.getText().length() > 0 || !(mAgeUser.getText().equals(age))) {
-                        account.put("Age", Integer.parseInt(mAgeUser.getText().toString()));
+                        object.put("Age", Integer.parseInt(mAgeUser.getText().toString()));
                     }
-                    account.saveInBackground(new SaveCallback() {
+                    object.saveInBackground(new SaveCallback() {
                         public void done(ParseException e) {
                             if (e == null) {
                                 // Saved successfully.

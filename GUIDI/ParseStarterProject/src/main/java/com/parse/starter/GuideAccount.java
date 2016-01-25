@@ -1,21 +1,20 @@
 package com.parse.starter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
-
-import java.util.List;
 
 public class GuideAccount extends AppCompatActivity {
 
@@ -26,7 +25,7 @@ public class GuideAccount extends AppCompatActivity {
     Integer age;
     String objectId;
 
-    List requests;
+
 
 
     @Override
@@ -47,9 +46,9 @@ public class GuideAccount extends AppCompatActivity {
                Log.i("guide", "objectid of user, check if  it is the same " + objectId);
 
                 if (e == null) {
-
                     name = object.getString("First_name");
                     Log.i("guide", "account name " + name);
+
                     if (name != null) {
                         mNameUser.setText(name);
                     }
@@ -68,71 +67,14 @@ public class GuideAccount extends AppCompatActivity {
     }
 
     public void sendRequest(View view) {
-        // suppose we have a user we want to follow
-        ParseQuery<ParseUser> query = ParseUser.getQuery();
-        query.findInBackground(new FindCallback<ParseUser>() {
-            @Override
-            public void done(List<ParseUser> users, ParseException e) {
-                if (e == null) {
 
-                    for(ParseUser otherUser : users){
-                        Log.i("gacocunt", "user id " + otherUser.getObjectId());
-                        if(otherUser.getObjectId().equals(objectId)) {
+        DataBase profile = new DataBase();
+        profile.put("Userrequest", ParseUser.getCurrentUser());
+        profile.put("Guidematch", ParseObject.createWithoutData("_User", objectId));
+        profile.setFalse();
+        profile.saveInBackground();
+        Toast.makeText(this, "Send Request", Toast.LENGTH_SHORT);
 
-                            requests = otherUser.getList("Requests");
-
-                            requests.add(ParseUser.getCurrentUser().getObjectId());
-
-                            Log.i("guideacc", "list " + requests + " list size " + requests.size());
-                            otherUser.put("Test", "dit werkt");
-                            otherUser.put("Requests", requests);
-
-                            Log.i("guideacc", "request list " + otherUser.getList("Request"));
-
-                            otherUser.saveInBackground(new SaveCallback() {
-                                public void done(ParseException e) {
-                                    if (e == null) {
-                                        // Saved successfully.
-                                        Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_SHORT).show();
-                                    } else {
-                                        // The save failed.
-                                        Toast.makeText(getApplicationContext(), "Failed to Save", Toast.LENGTH_SHORT).show();
-                                        Log.d("no save ", "User update error: " + e);
-                                    }
-                                }
-                            });
-                        }
-                    }
-                }
-                else {
-                    Log.e("guideacc", "error " + e);
-                }
-            }
-        });
-//                if (e == null) {
-//                    Log.i("guideacc", "naam " + object.get("First_name").toString());
-//
-//                    requests = object.getList("Requests");
-//
-//                    requests.add(ParseUser.getCurrentUser().getObjectId());
-//
-//                    Log.i("guideacc", "list " + requests + " list size " + requests.size());
-//                    object.put("Test", "dit werkt");
-//                    object.put("Requests", requests);
-//
-//
-//                    Log.i("guideacc", "request list " + object.getList("Request"));
-//
-//
-//                    object.saveInBackground();
-//
-//
-//                } else {
-//                    Log.e("guideacc", "error " + e);
-//                }
-//
-//            }
-//        });
     }
 
 
@@ -168,4 +110,43 @@ public class GuideAccount extends AppCompatActivity {
 
             public void getReviews(View view) {
             }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_Main){
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
         }
+
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        if (id == R.id.action_account) {
+
+            Intent i = new Intent(this, Account.class);
+            startActivity(i);
+        }
+        if(id == R.id.action_logout){
+            ParseUser.logOut();
+            Intent i = new Intent(this, Login.class);
+            startActivity(i);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+}

@@ -40,6 +40,8 @@ public class DataBase extends ParseObject{
         return getString("name");
     }
 
+    public void setFalse() {put("Acceptuser", false);}
+
     public void setName(String name){
         put("name", name);
     }

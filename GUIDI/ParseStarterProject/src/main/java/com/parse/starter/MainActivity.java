@@ -95,6 +95,10 @@ public class MainActivity extends ActionBarActivity {
             Intent i = new Intent(MainActivity.this, Login.class);
             startActivity(i);
         }
+        if(id== R.id.action_request){
+            Intent i = new Intent(MainActivity.this, Requests.class);
+            startActivity(i);
+        }
 
       return super.onOptionsItemSelected(item);
     }
