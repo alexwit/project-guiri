@@ -24,10 +24,14 @@ public class RequestAdapter extends ParseQueryAdapter<ParseObject> {
 
     private List<ParseUser> mUserList;
 
-    public RequestAdapter(Context context, QueryFactory<ParseObject> queryFactory) {
+
+    public RequestAdapter(Context context, ParseQueryAdapter.QueryFactory queryFactory) {
         // Use the QueryFactory to construct a PQA that will only show
         // Todos marked as high-pri
+
         super(context, queryFactory);
+        Log.i("reqadap", "inside it ");
+
 
     }
 

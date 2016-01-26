@@ -1,17 +1,21 @@
 package com.parse.starter;
 
-import android.app.ListActivity;
 import android.util.Log;
 
+import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import com.parse.ParseUser;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Created by Papi lexus on 13-1-2016.
  */
-public class Search extends ListActivity {
+public class Search {
 
     public ParseQueryAdapter.QueryFactory searchUsers(final String city) {
 
@@ -20,6 +24,7 @@ public class Search extends ListActivity {
             public ParseQuery create() {
                 ParseQuery query = ParseQuery.getQuery("_User");
                 query.whereEqualTo("City", city);
+                query.whereNotEqualTo("objectId", ParseUser.getCurrentUser().getObjectId());
                 Log.i("search", "in search city is: " + city);
                 return query;
             }
@@ -29,45 +34,32 @@ public class Search extends ListActivity {
 
     }
 
-    public ParseQueryAdapter.QueryFactory searchRequests() {
+    public List<ParseQuery> searchRequests() {
 
-        ParseQueryAdapter.QueryFactory queryFactory = new ParseQueryAdapter.QueryFactory() {
+//        List<ParseObject> AL = new List<ParseObject>() {
+        final List<ParseQuery> queryList = Collections.emptyList();
+//            public ParseQuery create() {
+        ParseQuery query = ParseQuery.getQuery("DataBase");
+        Log.i("Seearch adapt", " current user" + ParseUser.getCurrentUser().toString());
+        query.whereEqualTo("GuideMatchId", ParseUser.getCurrentUser().toString());
+        query.whereNotEqualTo("Declineduser", true);
+        query.findInBackground(new FindCallback<ParseObject>() {
             @Override
-            public ParseQuery create() {
-                ParseQuery query = ParseQuery.getQuery("DataBase");
-                query.include("Userrequest");
-                query.whereEqualTo("Guidematch", ParseUser.getCurrentUser());
-//                query.findInBackground(new FindCallback<ParseObject>() {
-//                    @Override
-//                    public void done(List<ParseObject> objects, ParseException e) {
-//                        for(ParseObject object: objects){
-//                            String username = object.get("First_name".toString());
-//                            Log.i("fcatory", "username forlopo" + username);
-//                        }
-//                    }
-//                });
-                Log.i("ReqAdapt", "inside query");
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e == null) {
+                    for (ParseObject object : objects) {
+                        String objectId = object.getObjectId();
+                        ParseQuery nextQuery = ParseQuery.getQuery("_User");
+                        nextQuery.whereEqualTo("objectId", objectId);
+                        queryList.add(nextQuery);
+                    }
 
-                try {
-                    query.find();
-                    Log.i("searchReq", "found something ");
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                    Log.e("searchReq", "error find " + e );
                 }
-//                try {
-//                    ParseObject user_request = query.get("Userrequest");
-//                    String Username = user_request.getString("First_name");
-//                    Log.i("searchRequest", "name of first user found " + Username);
-//                } catch (ParseException e) {
-//                    e.printStackTrace();
-//                    Log.e("searchreq","error " +  e);
-                return query;
+
             }
-        };
 
-        return queryFactory;
+        });
 
+        return queryList;
     }
-
 }

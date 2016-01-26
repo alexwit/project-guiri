@@ -24,7 +24,7 @@ public class GuideAccount extends AppCompatActivity {
     String name;
     Integer age;
     String objectId;
-
+    String emailCurrUser;
 
 
 
@@ -38,7 +38,7 @@ public class GuideAccount extends AppCompatActivity {
 
         mNameUser = (TextView) findViewById(R.id.account_username);
         mAgeUser = (TextView) findViewById(R.id.account_age);
-
+        emailCurrUser = ParseUser.getCurrentUser().getEmail();
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
         query.getInBackground(objectId, new GetCallback<ParseObject>() {
@@ -70,9 +70,11 @@ public class GuideAccount extends AppCompatActivity {
 
         DataBase profile = new DataBase();
         profile.put("Userrequest", ParseUser.getCurrentUser());
-        profile.put("Guidematch", ParseObject.createWithoutData("_User", objectId));
-        profile.setFalse();
+        profile.put("Guidematch", objectId);
+        profile.put("Email", emailCurrUser);
+        profile.setAcceptUserFalse();
         profile.saveInBackground();
+        profile.setDecilinedUserFalse();
         Toast.makeText(this, "Send Request", Toast.LENGTH_SHORT);
 
     }
