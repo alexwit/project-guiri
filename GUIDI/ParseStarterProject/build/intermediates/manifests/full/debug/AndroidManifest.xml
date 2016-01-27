@@ -70,9 +70,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.parse.starter.Account" />
-        <activity android:name="com.parse.starter.ChangeAccount" />
-        <activity android:name="com.parse.starter.NewAccount" />
+        <activity
+            android:name="com.parse.starter.Account"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.parse.starter.ChangeAccount"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.parse.starter.NewAccount"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.parse.starter.SearchList"
             android:label="@string/title_activity_search_list"
@@ -81,6 +87,7 @@
             android:name="com.parse.starter.GuideAccount"
             android:label="@string/title_activity_guide_account"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.parse.starter.Requests" />
 
         <service android:name="com.parse.PushService" />
 
@@ -104,8 +111,6 @@
                 <category android:name="com.parse.starter" />
             </intent-filter>
         </receiver>
-
-        <activity android:name="com.parse.starter.Requests" />
     </application>
 
 </manifest>

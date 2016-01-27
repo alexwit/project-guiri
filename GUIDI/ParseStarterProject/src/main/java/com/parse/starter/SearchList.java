@@ -42,8 +42,6 @@ public class SearchList extends ListActivity {
         objectID = mainAdapter.objectID;
         Log.i("searchlist", "size List " + objectID.size());
 
-
-
     }
 
 

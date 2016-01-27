@@ -1,5 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!--&lt;!&ndash;<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;-->
+<!--&lt;!&ndash;android:id="@+id/pager"&ndash;&gt;-->
+<!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;android:layout_height="match_parent">&ndash;&gt;-->
+
+<!--&lt;!&ndash;<android.support.v4.view.PagerTitleStrip&ndash;&gt;-->
+<!--&lt;!&ndash;android:id="@+id/pagerHeader"&ndash;&gt;-->
+<!--&lt;!&ndash;android:layout_height="48dp"&ndash;&gt;-->
+<!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;android:layout_gravity="top"&ndash;&gt;-->
+<!--&lt;!&ndash;/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</android.support.v4.view.ViewPager>&ndash;&gt;-->
+
+
+
+
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:paddingTop="@dimen/activity_vertical_margin"-->
+    <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
+    <!--android:orientation="horizontal" >-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/account_name_description"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_weight="1"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/account_age_description"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:inputType="number"-->
+            <!--android:layout_weight="1"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"/>-->
+
+
+    <!--</LinearLayout>-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/account_city_desciptrion"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_weight="1"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/account_country_desciptrion"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_weight="1"-->
+            <!--android:textAppearance="?android:attr/textAppearanceMedium"/>-->
+
+    <!--</LinearLayout>-->
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/account_email_desciptrion"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:layout_weight="1"-->
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"/>-->
+
+    <!--<Button-->
+        <!--android:id="@+id/add_btn"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:text="Add" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/delete_btn"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:text="Delete" />-->
+
+
+
+
+<!--</LinearLayout>-->
+
+
+
+
+<!--<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:id="@+id/pager"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent">-->
+
+<!--<android.support.v4.view.PagerTitleStrip-->
+<!--android:id="@+id/pagerHeader"-->
+<!--android:layout_height="48dp"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_gravity="top"-->
+<!--/>-->
+
+<!--</android.support.v4.view.ViewPager>-->
+
+
+
 <!--<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"-->
 <!--android:id="@+id/pager"-->
 <!--android:layout_width="match_parent"-->
@@ -42,13 +163,5 @@
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-    <TextView
-        android:id="@+id/account_bolean_description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-</LinearLayout>
-<!-- From: file:/C:/Users/Papi%20lexus/Desktop/project-guiri/project-guiri/GUIDI/ParseStarterProject/src/main/res/layout/guide_list_item.xml -->
+</LinearLayout><!-- From: file:/C:/Users/Papi%20lexus/Desktop/project-guiri/project-guiri/GUIDI/ParseStarterProject/src/main/res/layout/guide_list_item.xml -->

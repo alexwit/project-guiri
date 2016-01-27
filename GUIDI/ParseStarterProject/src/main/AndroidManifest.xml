@@ -63,9 +63,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Account" />
-        <activity android:name=".ChangeAccount" />
-        <activity android:name=".NewAccount" />
+        <activity android:name=".Account"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ChangeAccount"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".NewAccount"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".SearchList"
             android:label="@string/title_activity_search_list"
@@ -74,6 +77,8 @@
             android:name=".GuideAccount"
             android:label="@string/title_activity_guide_account"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".Requests"></activity>
 
         <service android:name="com.parse.PushService" />
 
@@ -98,7 +103,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".Requests"></activity>
+
     </application>
 
 </manifest>

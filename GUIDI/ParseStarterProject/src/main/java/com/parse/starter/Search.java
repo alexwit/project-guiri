@@ -34,6 +34,25 @@ public class Search {
 
     }
 
+    public ParseQueryAdapter.QueryFactory searchMatch(){
+        ParseQueryAdapter.QueryFactory queryFactory = new ParseQueryAdapter.QueryFactory() {
+            @Override
+            public ParseQuery create() {
+                Log.i("reqadap", "inside factory");
+                ParseQuery query = new ParseQuery("DataBase");
+                query.whereEqualTo("Guidematch", ParseUser.getCurrentUser().getObjectId());
+//                query.whereEqualTo("Acceptuser", false);
+//                query.whereEqualTo("Declineduser", false);
+                query.orderByAscending("updatedAt");
+                query.setLimit(5);
+                return query;
+            }
+        };
+
+        return queryFactory;
+    }
+
+
     public List<ParseQuery> searchRequests() {
 
 //        List<ParseObject> AL = new List<ParseObject>() {

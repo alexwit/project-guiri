@@ -27,13 +27,14 @@ public class Requests extends ListActivity {
         setContentView(R.layout.activity_requests);
 
 
-        queryList = new ArrayList<ParseQuery<ParseUser>>();
-        superQuery = ParseQuery.getQuery("_User");
+//        queryList = new ArrayList<ParseQuery<ParseUser>>();
+//        superQuery = ParseQuery.getQuery("_User");
 
         ParseObject.registerSubclass(DataBase.class);
 
+        Search search = new Search();
 
-        requestAdapter = new RequestAdapter(this, queryFactory());
+        requestAdapter = new RequestAdapter(this, search.searchMatch());
 
 
         setListAdapter(requestAdapter);

@@ -68,13 +68,18 @@ public class GuideAccount extends AppCompatActivity {
 
     public void sendRequest(View view) {
 
+
         DataBase profile = new DataBase();
         profile.put("Userrequest", ParseUser.getCurrentUser());
         profile.put("Guidematch", objectId);
         profile.put("Email", emailCurrUser);
+        profile.put("TouristName", ParseUser.getCurrentUser().get("First_name"));
+        profile.put("TouristSurname", ParseUser.getCurrentUser().get("Surname"));
+        profile.put("TouristCity", ParseUser.getCurrentUser().get("City"));
+        profile.put("TouristCountry", ParseUser.getCurrentUser().get("Country"));
         profile.setAcceptUserFalse();
-        profile.saveInBackground();
         profile.setDecilinedUserFalse();
+        profile.saveInBackground();
         Toast.makeText(this, "Send Request", Toast.LENGTH_SHORT);
 
     }
