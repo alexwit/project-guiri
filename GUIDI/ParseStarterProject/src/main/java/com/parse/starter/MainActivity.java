@@ -11,17 +11,18 @@ package com.parse.starter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.parse.LogOutCallback;
 import com.parse.ParseAnalytics;
-import com.parse.ParseObject;
+import com.parse.ParseException;
 import com.parse.ParseUser;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -34,6 +35,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         ParseAnalytics.trackAppOpenedInBackground(getIntent());
@@ -42,9 +44,6 @@ public class MainActivity extends ActionBarActivity {
 
 
     }
-
-    private List<ParseObject> localsList;
-
 
     public void searchCity(View v){
 
@@ -58,14 +57,6 @@ public class MainActivity extends ActionBarActivity {
             Toast.makeText(MainActivity.this, "You did not enter a city!", Toast.LENGTH_SHORT).show();
         }
     }
-
-
-    ArrayList<ParseObject> ObjectList;
-
-
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -85,15 +76,30 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
         return true;
         }
+        if (id == R.id.action_matches){
+            Intent i = new Intent(MainActivity.this, AcceptedGuide.class);
+            startActivity(i);
+        }
+
         if (id == R.id.action_account) {
 
         Intent i = new Intent(MainActivity.this, Account.class);
         startActivity(i);
         }
         if(id == R.id.action_logout){
-            ParseUser.logOut();
+
+            ParseUser.logOutInBackground(new LogOutCallback() {
+                @Override
+                public void done(ParseException e) {
+
+                    Log.e("main", "error " + e);
+                    Toast.makeText(MainActivity.this, "Log out malfunction", Toast.LENGTH_SHORT).show();
+                }
+            });
             Intent i = new Intent(MainActivity.this, Login.class);
             startActivity(i);
+            finish();
+            return true;
         }
         if(id== R.id.action_request){
             Intent i = new Intent(MainActivity.this, Requests.class);

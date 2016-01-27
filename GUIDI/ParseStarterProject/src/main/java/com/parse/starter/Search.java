@@ -2,15 +2,9 @@ package com.parse.starter;
 
 import android.util.Log;
 
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import com.parse.ParseUser;
-
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Created by Papi lexus on 13-1-2016.
@@ -39,12 +33,14 @@ public class Search {
             @Override
             public ParseQuery create() {
                 Log.i("reqadap", "inside factory");
-                ParseQuery query = new ParseQuery("DataBase");
-                query.whereEqualTo("Guidematch", ParseUser.getCurrentUser().getObjectId());
-//                query.whereEqualTo("Acceptuser", false);
-//                query.whereEqualTo("Declineduser", false);
+                ParseQuery query = ParseQuery.getQuery("DataBase");
+                Log.i(" request guide id ", "user " + ParseUser.getCurrentUser().getObjectId());
+                query.whereEqualTo("GuideMatchId", ParseUser.getCurrentUser().getObjectId());
+                query.whereEqualTo("Acceptuser", false);
+                query.whereEqualTo("Declineduser", false);
                 query.orderByAscending("updatedAt");
-                query.setLimit(5);
+
+//                query.setLimit(5);
                 return query;
             }
         };
@@ -52,33 +48,23 @@ public class Search {
         return queryFactory;
     }
 
-
-    public List<ParseQuery> searchRequests() {
-
-//        List<ParseObject> AL = new List<ParseObject>() {
-        final List<ParseQuery> queryList = Collections.emptyList();
-//            public ParseQuery create() {
-        ParseQuery query = ParseQuery.getQuery("DataBase");
-        Log.i("Seearch adapt", " current user" + ParseUser.getCurrentUser().toString());
-        query.whereEqualTo("GuideMatchId", ParseUser.getCurrentUser().toString());
-        query.whereNotEqualTo("Declineduser", true);
-        query.findInBackground(new FindCallback<ParseObject>() {
+    public ParseQueryAdapter.QueryFactory searchAcceptance(){
+        ParseQueryAdapter.QueryFactory queryFactory = new ParseQueryAdapter.QueryFactory() {
             @Override
-            public void done(List<ParseObject> objects, ParseException e) {
-                if (e == null) {
-                    for (ParseObject object : objects) {
-                        String objectId = object.getObjectId();
-                        ParseQuery nextQuery = ParseQuery.getQuery("_User");
-                        nextQuery.whereEqualTo("objectId", objectId);
-                        queryList.add(nextQuery);
-                    }
+            public ParseQuery create() {
+                Log.i("reqadap", "inside factory");
+                ParseQuery query = ParseQuery.getQuery("DataBase");
+                Log.i(" request guide id ", "user " + ParseUser.getCurrentUser().getObjectId());
+                query.whereEqualTo("UserReqId", ParseUser.getCurrentUser().getObjectId());
+                query.whereEqualTo("Acceptuser", true);
+                query.whereEqualTo("Declineduser", false);
+                query.orderByAscending("updatedAt");
 
-                }
-
+//                query.setLimit(5);
+                return query;
             }
+        };
 
-        });
-
-        return queryList;
+        return queryFactory;
     }
 }

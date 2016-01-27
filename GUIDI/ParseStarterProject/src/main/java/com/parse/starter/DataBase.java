@@ -17,7 +17,7 @@ public class DataBase extends ParseObject{
     public DataBase(){
 
     }
-
+    // todo Check which units are not used
     public boolean isCompleted(){
         return getBoolean("completed");
     }

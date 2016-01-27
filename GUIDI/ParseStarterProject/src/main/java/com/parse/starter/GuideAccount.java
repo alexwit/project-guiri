@@ -11,22 +11,29 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.GetCallback;
+import com.parse.ParseACL;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 public class GuideAccount extends AppCompatActivity {
 
     TextView mNameUser;
     TextView mAgeUser;
+    TextView mCityUser;
+    TextView mCountryUser;
 
-    String name;
+    String nameGuideUser;
     Integer age;
     String objectId;
     String emailCurrUser;
-
-
+    String eMailGuideUser;
+    String surnameGuideUser;
+    String cityGuideUser;
+    String countryGuideUser;
+    Integer ageGuideUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,50 +45,96 @@ public class GuideAccount extends AppCompatActivity {
 
         mNameUser = (TextView) findViewById(R.id.account_username);
         mAgeUser = (TextView) findViewById(R.id.account_age);
+        mCityUser = (TextView) findViewById(R.id.account_city);
+        mCountryUser = (TextView) findViewById(R.id.account_country);
         emailCurrUser = ParseUser.getCurrentUser().getEmail();
-
+        Log.i("guide ", "im here ");
+        // Gets the account information of the inspected user
         ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
         query.getInBackground(objectId, new GetCallback<ParseObject>() {
             public void done(ParseObject object, ParseException e) {
-               Log.i("guide", "objectid of user, check if  it is the same " + objectId);
-
+                // todo make sure that no input needed to be checked
                 if (e == null) {
-                    name = object.getString("First_name");
-                    Log.i("guide", "account name " + name);
+                    nameGuideUser = object.getString("First_name");
+                    surnameGuideUser = object.getString("Surname");
+                    cityGuideUser = object.getString("City");
+                    Log.i("guide", "city " + cityGuideUser);
+                    countryGuideUser = object.getString("Country");
+                    eMailGuideUser = object.getString("email");
+                    ageGuideUser = object.getInt("Age");
 
-                    if (name != null) {
-                        mNameUser.setText(name);
+                    // todo Checks kunnen eruit
+                    if (nameGuideUser != null) {
+                        mNameUser.setText(nameGuideUser + " " + surnameGuideUser);
                     }
-                    age = object.getInt("Age");
-                    if (age != null) {
-                        mAgeUser.setText(age.toString());
+                    if (ageGuideUser != null) {
+                        mAgeUser.setText(ageGuideUser.toString());
                     }
+                    if (cityGuideUser !=null){
+                        mCityUser.setText(cityGuideUser);
+                    }
+                    if(countryGuideUser !=null){
+                        mCountryUser.setText(countryGuideUser);
+                    }
+
                 }
                 else {
                     // something went wrong)
-                    Log.e("Account", "did not get new name, error: " + e);
+                    Toast.makeText(GuideAccount.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
+                    Log.e("Account", "error: " + e);
                 }
             }
         });
 
     }
 
+    // makes sure that the request can only be send once
+    private boolean sendRequest = false;
+
     public void sendRequest(View view) {
 
+        // Creates new connection on Parse so the relation request is set.
+        if(!sendRequest) {
+            DataBase profile = new DataBase();
+            profile.put("UserReqId", ParseUser.getCurrentUser().getObjectId());
+            profile.put("GuideMatchId", objectId);
+            profile.put("Email", emailCurrUser);
+            profile.put("TouristName", ParseUser.getCurrentUser().get("First_name"));
+            profile.put("TouristSurname", ParseUser.getCurrentUser().get("Surname"));
+            profile.put("TouristCity", ParseUser.getCurrentUser().get("City"));
+            profile.put("TouristCountry", ParseUser.getCurrentUser().get("Country"));
+            profile.put("GuideName", nameGuideUser);
+            profile.put("GuideSurname", surnameGuideUser);
+            profile.put("GuideCity", cityGuideUser);
+            profile.put("GuideCountry", countryGuideUser);
+            profile.put("EmailGuide", eMailGuideUser);
 
-        DataBase profile = new DataBase();
-        profile.put("Userrequest", ParseUser.getCurrentUser());
-        profile.put("Guidematch", objectId);
-        profile.put("Email", emailCurrUser);
-        profile.put("TouristName", ParseUser.getCurrentUser().get("First_name"));
-        profile.put("TouristSurname", ParseUser.getCurrentUser().get("Surname"));
-        profile.put("TouristCity", ParseUser.getCurrentUser().get("City"));
-        profile.put("TouristCountry", ParseUser.getCurrentUser().get("Country"));
-        profile.setAcceptUserFalse();
-        profile.setDecilinedUserFalse();
-        profile.saveInBackground();
-        Toast.makeText(this, "Send Request", Toast.LENGTH_SHORT);
+            // sets the information to be writeable and readable by different users
+            ParseACL acl = new ParseACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            profile.setACL(acl);
+            profile.setAcceptUserFalse();
+            profile.setDecilinedUserFalse();
+            profile.saveInBackground(new SaveCallback() {
+                public void done(ParseException e) {
+                    if (e == null) {
+                        // Saved successfully.
+                        Toast.makeText(getApplicationContext(), "Request send", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // The save failed.
 
+                        Toast.makeText(getApplicationContext(), "Failed to Save", Toast.LENGTH_SHORT).show();
+                        Log.i("request save ", "error " + e);
+                    }
+                }
+            });
+            Toast.makeText(this, "Send Request", Toast.LENGTH_SHORT);
+            sendRequest = true;
+        }
+        else{
+            Toast.makeText(GuideAccount.this, "You've allready send an request", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
@@ -91,7 +144,7 @@ public class GuideAccount extends AppCompatActivity {
     public void sendEmail(View view) {
 
 
-                // todo IK SNAP HIER GEEN Coño van
+                // todo  Haal er misschien maar uit
 //        JSONObject data = new JSONObject();
 //        try {
 //            data.put("action", "com.bt.yana.GOT_MESSAGE");

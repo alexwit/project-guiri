@@ -15,6 +15,12 @@
         android:orderInCategory="100"
         app:showAsAction="never"/>
 
+    <item android:id="@+id/action_matches"
+        android:title="Matches"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
+
     <item android:id="@+id/action_account"
         android:title="Account"
         android:orderInCategory="100"

@@ -13,7 +13,7 @@ import com.parse.ParseUser;
 
 public class Login extends AppCompatActivity {
 
-    EditText mUsernameField;
+    EditText mEmailField;
     EditText mPasswordField;
 
     @Override
@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mUsernameField = (EditText)findViewById(R.id.register_username);
+        mEmailField = (EditText)findViewById(R.id.register_username);
         mPasswordField = (EditText)findViewById(R.id.register_password);
 
     }
@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
 
     public void logIn(final View v){
         v.setEnabled(false);
-        ParseUser.logInInBackground(mUsernameField.getText().toString(), mPasswordField.getText().toString(), new LogInCallback() {
+        ParseUser.logInInBackground(mEmailField.getText().toString(), mPasswordField.getText().toString(), new LogInCallback() {
             @Override
             public void done(ParseUser user, ParseException e) {
                 if (user != null) {
@@ -46,8 +46,8 @@ public class Login extends AppCompatActivity {
                 } else {
                     // Signup failed. Look at the ParseException to see what happened.
                     switch (e.getCode()) {
-                        case ParseException.USERNAME_MISSING:
-                            Toast.makeText(Login.this, "Sorry, you must supply a username", Toast.LENGTH_SHORT).show();
+                        case ParseException.EMAIL_MISSING:
+                            Toast.makeText(Login.this, "Sorry, you must supply an email account", Toast.LENGTH_SHORT).show();
                             break;
                         case ParseException.PASSWORD_MISSING:
                             Toast.makeText(Login.this, "Sorry, you must supply a password", Toast.LENGTH_SHORT).show();

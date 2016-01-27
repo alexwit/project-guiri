@@ -45,12 +45,12 @@
             android:name=".MainActivity"
             android:label="@string/app_name">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+             <!--<intent-filter>-->
+             <!--<action android:name="android.intent.action.MAIN" />-->
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+             <!--<category android:name="android.intent.category.LAUNCHER" />-->
+             <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".Login"
@@ -63,22 +63,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Account"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".ChangeAccount"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".NewAccount"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Account"
+            />
+        <activity
+            android:name=".ChangeAccount"
+            />
+        <activity
+            android:name=".NewAccount"
+            />
         <activity
             android:name=".SearchList"
             android:label="@string/title_activity_search_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+           />
         <activity
             android:name=".GuideAccount"
             android:label="@string/title_activity_guide_account"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".Requests"></activity>
+             />
+        <activity android:name=".Requests" />
 
         <service android:name="com.parse.PushService" />
 
@@ -98,12 +100,12 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-                <!--                   IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
+                <!-- IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
                 <category android:name="com.parse.starter" />
             </intent-filter>
         </receiver>
 
-
+        <activity android:name=".AcceptedGuide"></activity>
     </application>
 
 </manifest>

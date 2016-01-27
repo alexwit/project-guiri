@@ -14,12 +14,12 @@ import com.parse.ParseUser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Requests extends ListActivity {
+public class Requests extends ListActivity implements OnDataChanged {
 
     RequestAdapter requestAdapter;
     ParseQuery superQuery;
     List<ParseQuery<ParseUser>> queryList;
-
+    Search search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +32,10 @@ public class Requests extends ListActivity {
 
         ParseObject.registerSubclass(DataBase.class);
 
-        Search search = new Search();
+        search = new Search();
 
-        requestAdapter = new RequestAdapter(this, search.searchMatch());
+
+        requestAdapter = new RequestAdapter(this, search.searchMatch(), this);
 
 
         setListAdapter(requestAdapter);
@@ -109,4 +110,11 @@ public class Requests extends ListActivity {
     }
 
 
+    @Override
+    public void DataChanged() {
+        requestAdapter.notifyDataSetChanged();
+        requestAdapter = new RequestAdapter(this, search.searchMatch(), this);
+        setListAdapter(requestAdapter);
+        requestAdapter.loadObjects();
+    }
 }

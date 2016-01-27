@@ -4,14 +4,12 @@ import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.ParseObject;
-import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
-import com.parse.ParseUser;
-
-import java.util.List;
 
 /**
  * Created by Papi lexus on 14-1-2016.
@@ -21,27 +19,16 @@ import java.util.List;
 
 public class RequestAdapter extends ParseQueryAdapter<ParseObject> {
 
+    OnDataChanged callBack;
 
-    private List<ParseUser> mUserList;
-
-
-    public RequestAdapter(Context context, ParseQueryAdapter.QueryFactory queryFactory) {
+    public RequestAdapter(Context context, ParseQueryAdapter.QueryFactory queryFactory,  OnDataChanged callBack) {
 
 //        super(context ,queryFactory);
 //         Use the QueryFactory to construct a PQA that will only show
 //         Todos marked as high-pri
-        super(context, new ParseQueryAdapter.QueryFactory<ParseObject>() {
-            public ParseQuery create() {
-                Log.i("reqadap", "inside factory");
-                ParseQuery query = new ParseQuery("DataBase");
-                query.whereEqualTo("Guidematch", ParseUser.getCurrentUser().getObjectId());
-//                query.whereEqualTo("Acceptuser", false);
-//                query.whereEqualTo("Declineduser", false);
-                query.orderByAscending("updatedAt");
-                query.setLimit(5);
-                return query;
-            }
-        });
+        super(context, queryFactory);
+        this.callBack = callBack;
+
     }
 
 
@@ -61,63 +48,49 @@ public class RequestAdapter extends ParseQueryAdapter<ParseObject> {
         TextView titleTextView = (TextView) v.findViewById(R.id.account_name_description);
 
         TextView ageTextView = (TextView) v.findViewById(R.id.account_age_description);
-
-//        TextView cityTextView = (TextView) v.findViewById(R.id.account_city_desciptrion);
 //
-//        TextView countryTextView = (TextView)v.findViewById(R.id.account_country_desciptrion);
-
-        titleTextView.setText(object.getString("First_name"));
-        ageTextView.setText(String.valueOf(object.getInt("Age")));
-//        cityTextView.setText(String.valueOf(object.getString("City")));
-//        countryTextView.setText(object.getString("Country"));
+        TextView cityTextView = (TextView) v.findViewById(R.id.account_city_description);
 //
-//        v.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.i("adapter", "im in the clicker ID= " + object.getObjectId().toString());
-//                String itemId = object.getObjectId().toString();
-//                Intent intent = new Intent(getContext(), GuideAccount.class);
-//                intent.putExtra("ID", itemId);
-//                getContext().startActivity(intent);
-//            }
-//        });
+        TextView countryTextView = (TextView)v.findViewById(R.id.account_country_description);
 
-//        Button deleteBtn = (Button)v.findViewById(R.id.delete_btn);
-//        Button addBtn = (Button)v.findViewById(R.id.add_btn);
-////
-//        deleteBtn.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                //do something
-//                object.put("Declineduser", true);
-//                object.saveInBackground();
-//                notifyDataSetChanged();
-//            }
-//        });
+        titleTextView.setText(object.getString("TouristName") + " " + object.get("TouristSurname"));
+        ageTextView.setText(String.valueOf(object.getInt("TouristAge")));
+        cityTextView.setText(String.valueOf(object.getString("TouristCity")));
+        countryTextView.setText(object.getString("TouristCountry"));
+
+
+        Button deleteBtn = (Button)v.findViewById(R.id.btn_delete);
+        Button addBtn = (Button)v.findViewById(R.id.btn_add);
 //
-//        addBtn.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//                TextView emailTourist = (TextView)v.findViewById(R.id.account_email_desciptrion);
-//                object.put("Accepteduser", true);
+        deleteBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                //do something
+                object.put("Declineduser", true);
+                object.saveInBackground();
+                callBack.DataChanged();
+
+                Toast.makeText(getContext(), "User Declined", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        addBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+//                TextView emailTourist = (TextView)v.findViewById(R.id.account_email_description);
+                object.put("Acceptuser", true);
 //                emailTourist.setText(object.getString("Email"));
-//                notifyDataSetChanged();
-//            }
-//        });
+                Toast.makeText(getContext(), "User Accepted", Toast.LENGTH_SHORT).show();
+                notifyDataSetChanged();
+                object.saveInBackground();
+                callBack.DataChanged();
+            }
+        });
 
         return v;
     }
 
-//
-//    public void setData(List<ParseUser> userList) {
-//        mUserList = userList;
-//        notifyDataSetChanged();
-//    }
-//
-//    @Override
-//    public int getCount() {
-//        return mUserList.size();
-//    }
 }
 
 

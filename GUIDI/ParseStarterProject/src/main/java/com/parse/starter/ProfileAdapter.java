@@ -26,8 +26,7 @@ public class ProfileAdapter extends ParseQueryAdapter<ParseObject> {
     private List<ParseUser> mUserList;
 
     public ProfileAdapter(Context context, QueryFactory<ParseObject> queryFactory) {
-        // Use the QueryFactory to construct a PQA that will only show
-        // Todos marked as high-pri
+
         super(context, queryFactory);
 
     }
@@ -66,16 +65,6 @@ public class ProfileAdapter extends ParseQueryAdapter<ParseObject> {
         return v;
     }
 
-//
-//    public void setData(List<ParseUser> userList) {
-//        mUserList = userList;
-//        notifyDataSetChanged();
-//    }
-//
-//    @Override
-//    public int getCount() {
-//        return mUserList.size();
-//    }
 }
 
 

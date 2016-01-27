@@ -31,36 +31,6 @@ public class NewAccount extends AppCompatActivity {
         mCountryUserField = (EditText)findViewById(R.id.newaccount_country);
         mCityUserField = (EditText)findViewById(R.id.newaccount_city);
     }
-//// Creates a new database for Profiles
-//    public void createAccount(View v){
-//        // todo make check for letters in username and think of more checks
-//
-//        if (mFirstNameField.getText().length() == 0 || mAgeUserField.getText().length() == 0
-//                || Integer.parseInt(mAgeUserField.getText().toString()) < 18
-//                || mSurnameField.getText().length() == 0 ||
-//                mCountryUserField.getText().length() == 0 || mCityUserField.getText().length() == 0){
-//            Toast.makeText(NewAccount.this, "Your input is incorrect", Toast.LENGTH_SHORT).show();
-//            return;}
-//
-//        DataBase t = new DataBase();
-//        t.setName(mFirstNameField.getText().toString());
-//        t.setAge(Integer.parseInt(mAgeUserField.getText().toString()));
-//        t.setCity(mCityUserField.getText().toString());
-//        t.setCountry(mCountryUserField.getText().toString());
-//        t.setCompleted(false);
-//        t.saveEventually();
-//
-//        Intent intent = new Intent(this, MainActivity.class);
-//        startActivity(intent);
-//
-////        else{
-////            Toast.makeText(NewAccount.this, "There is something wrong!", Toast.LENGTH_SHORT).show();
-////            Intent intent = new Intent(this, Login.class);
-////            startActivity(intent);
-////        }
-//    }
-
-
 
 //  Creates user account with object info implemented in user info
     public void createAccount(View v){
@@ -70,7 +40,7 @@ public class NewAccount extends AppCompatActivity {
                 || Integer.parseInt(mAgeUserField.getText().toString()) < 18
                 || mSurnameField.getText().length() == 0 ||
                 mCountryUserField.getText().length() == 0 || mCityUserField.getText().length() == 0){
-            Toast.makeText(NewAccount.this, "Your input is incorrect", Toast.LENGTH_SHORT).show();
+            Toast.makeText(NewAccount.this, "Input is correct", Toast.LENGTH_SHORT).show();
             return;}
 
         ParseUser currentUser = ParseUser.getCurrentUser();
@@ -93,8 +63,5 @@ public class NewAccount extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
-
-
 
 }

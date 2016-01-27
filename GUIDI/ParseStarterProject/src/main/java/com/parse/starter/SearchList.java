@@ -34,8 +34,6 @@ public class SearchList extends ListActivity {
 
         ParseQueryAdapter.QueryFactory queryFactory = search.searchUsers(city);
 
-        lv = getListView();
-
         ProfileAdapter mainAdapter = new ProfileAdapter(this, queryFactory);
         setListAdapter(mainAdapter);
         mainAdapter.loadObjects();

@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    tools:context="com.parse.starter.Account">
+    tools:context=".MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,12 +47,70 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-    <Button
-    android:id="@+id/submit_button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:onClick="toChangeAccount"
-    android:text="Change Account Specs" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:textSize="25dp"
+            android:text="City:"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:padding="15dp"
+            android:id="@+id/account_city"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:padding="15dp"
+            android:text="Country:"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:padding="15dp"
+            android:id="@+id/account_country"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="toChangeAccount"
+            android:text="Change Account Information" />
+
+        <Button
+            android:id="@+id/return_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="returnMain"
+            android:text="Return to Search" />
+
+
+
+    </LinearLayout>
+
 
 </LinearLayout>
 <!-- From: file:/C:/Users/Papi%20lexus/Desktop/project-guiri/project-guiri/GUIDI/ParseStarterProject/src/main/res/layout/activity_account.xml -->

@@ -24,27 +24,12 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-//        if(ParseUser.getCurrentUser().getUsername() == null){
-////            intent = new Intent(this, Login.class);
-//        }else{
-//            Log.i("REgister", "currentUser not null");
-//            intent = new Intent(this, MainActivity.class);
-//        }
-//
-//        startActivity(intent);
-
         mUsernameField = (EditText)findViewById(R.id.register_username);
         mPasswordField = (EditText)findViewById(R.id.register_password);
         mEmailField = (EditText)findViewById(R.id.register_email);
-
-
     }
-
+    // makes sure input is given
     public void register(final View v) {
-        if (mUsernameField.getText().length() == 0 || mPasswordField.getText().length() == 0 )
-          //|| mEmailField.getText().length() == 0
-
-            return;
 
         v.setEnabled(false);
         ParseUser user = new ParseUser();
@@ -52,7 +37,7 @@ public class Register extends AppCompatActivity {
         user.setPassword(mPasswordField.getText().toString());
         user.setEmail(mEmailField.getText().toString());
 
-
+        // Checks input of new user
         user.signUpInBackground(new SignUpCallback() {
             @Override
             public void done(ParseException e) {
@@ -69,6 +54,9 @@ public class Register extends AppCompatActivity {
                             break;
                         case ParseException.USERNAME_MISSING:
                             Toast.makeText(Register.this, "Sorry, you must supply a username", Toast.LENGTH_SHORT).show();
+                            break;
+                        case ParseException.EMAIL_MISSING:
+                            Toast.makeText(Register.this, "Sorry, you must supply a email account", Toast.LENGTH_SHORT).show();
                             break;
                         case ParseException.PASSWORD_MISSING:
                             Toast.makeText(Register.this, "Sorry, you must supply a password", Toast.LENGTH_SHORT).show();
