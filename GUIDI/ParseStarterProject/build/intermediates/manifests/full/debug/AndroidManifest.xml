@@ -51,6 +51,16 @@
         <activity
             android:name="com.parse.starter.MainActivity"
             android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.parse.starter.Login"
+            android:label="@string/title_activity_login" />
+        <activity android:name="com.parse.starter.Register" >
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -60,25 +70,18 @@
             <!-- </intent-filter> -->
         </activity>
         <activity
-            android:name="com.parse.starter.Login"
-            android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.parse.starter.Register" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.parse.starter.Account" />
+            android:name="com.parse.starter.Account"
+            android:label="Account" />
         <activity android:name="com.parse.starter.ChangeAccount" />
-        <activity android:name="com.parse.starter.NewAccount" />
+        <activity
+            android:name="com.parse.starter.NewAccount"
+            android:label="New Account" />
         <activity
             android:name="com.parse.starter.SearchList"
-            android:label="@string/title_activity_search_list" />
+            android:label="Search Results" />
         <activity
             android:name="com.parse.starter.GuideAccount"
-            android:label="@string/title_activity_guide_account" />
+            android:label="Guide Account" />
         <activity android:name="com.parse.starter.Requests" />
 
         <service android:name="com.parse.PushService" />

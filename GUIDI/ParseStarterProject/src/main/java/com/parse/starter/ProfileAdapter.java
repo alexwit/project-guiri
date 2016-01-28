@@ -47,7 +47,7 @@ public class ProfileAdapter extends ParseQueryAdapter<ParseObject> {
         // Add the title view
         TextView titleTextView = (TextView) v.findViewById(R.id.account_name_description);
         Log.i("adapter", "first name object " + object.getString("First_name"));
-        titleTextView.setText(object.getString("First_name"));
+        titleTextView.setText(object.getString("First_name") + " " + object.getString("Surname"));
         TextView ageTextView = (TextView) v.findViewById(R.id.account_age_description);
         ageTextView.setText(String.valueOf(object.getInt("Age")));
 

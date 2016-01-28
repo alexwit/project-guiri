@@ -94,7 +94,7 @@ public class ChangeAccount extends ActionBarActivity {
 
         });
     }
-//  // TODO: 27-1-2016  check dit morgen
+//  // TODO: 27-1-2016  check dit morge menu zou mogelijk moeten zijn.
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        // Inflate the menu; this adds items to the action bar if it is present.

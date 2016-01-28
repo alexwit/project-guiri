@@ -4,11 +4,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/results_city"
+        android:layout_gravity="center"
+        android:textSize="30dp" />
+
     <ListView
         android:id="@android:id/list"
         android:clickable="true"
         android:layout_height="wrap_content"
         android:layout_width="match_parent">
     </ListView>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Return to main"
+        android:onClick="returntheMain"/>
 
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.parse.starter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -21,9 +22,15 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        Log.i("login", "user " + currentUser);
+
+
         mEmailField = (EditText)findViewById(R.id.register_username);
         mPasswordField = (EditText)findViewById(R.id.register_password);
 
+
+        //todo Check user loged in and add Username in stead of email
     }
 
     public void goToRegister(View v){

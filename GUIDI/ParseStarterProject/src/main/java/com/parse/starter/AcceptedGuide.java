@@ -1,6 +1,7 @@
 package com.parse.starter;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 
 public class AcceptedGuide extends ListActivity {
@@ -18,6 +19,13 @@ public class AcceptedGuide extends ListActivity {
 
         setListAdapter(acceptAdapter);
         acceptAdapter.loadObjects();
+
+    }
+
+
+    public void returnToTheMain(){
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
 
     }
 }

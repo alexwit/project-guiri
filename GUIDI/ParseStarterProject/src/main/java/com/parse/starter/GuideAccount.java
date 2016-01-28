@@ -101,12 +101,14 @@ public class GuideAccount extends AppCompatActivity {
             profile.put("Email", emailCurrUser);
             profile.put("TouristName", ParseUser.getCurrentUser().get("First_name"));
             profile.put("TouristSurname", ParseUser.getCurrentUser().get("Surname"));
+            profile.put("TouristAge", ParseUser.getCurrentUser().get("Age"));
             profile.put("TouristCity", ParseUser.getCurrentUser().get("City"));
             profile.put("TouristCountry", ParseUser.getCurrentUser().get("Country"));
             profile.put("GuideName", nameGuideUser);
             profile.put("GuideSurname", surnameGuideUser);
             profile.put("GuideCity", cityGuideUser);
             profile.put("GuideCountry", countryGuideUser);
+            profile.put("GuideAge", ageGuideUser);
             profile.put("EmailGuide", eMailGuideUser);
 
             // sets the information to be writeable and readable by different users
@@ -191,14 +193,20 @@ public class GuideAccount extends AppCompatActivity {
             startActivity(i);
         }
 
-        if (id == R.id.action_settings) {
-            return true;
-        }
         if (id == R.id.action_account) {
 
             Intent i = new Intent(this, Account.class);
             startActivity(i);
         }
+        if (id== R.id.action_request){
+            Intent i = new Intent(this, Requests.class);
+            startActivity(i);
+        }
+        if (id== R.id.action_matches){
+            Intent i = new Intent(this, AcceptedGuide.class);
+            startActivity(i);
+        }
+
         if(id == R.id.action_logout){
             ParseUser.logOut();
             Intent i = new Intent(this, Login.class);

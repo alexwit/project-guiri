@@ -85,6 +85,6 @@ public class Account extends ActionBarActivity {
 
     }
 
-
+    //todo check if you can implement hamnburger menu
 
 }
