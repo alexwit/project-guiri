@@ -4,11 +4,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Matches"
-        android:textSize="30dp"/>
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Matches"
+            android:textSize="30dp"
+            android:layout_weight="1"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Return to Main"
+            android:onClick="returnToTheMain" />
+
+
+    </LinearLayout>
+
+
 
     <ListView
         android:id="@android:id/list"
@@ -17,21 +34,17 @@
         android:layout_width="match_parent">
     </ListView>
 
+
     <!-- Here is the view to show if the list is emtpy -->
     <TextView android:id="@id/android:empty"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
+        android:layout_gravity="center"
         android:text="No Matches"
         android:textColor="#525252"
         android:textSize="19.0sp"
         android:visibility="gone"/>
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Retun to Main"
-        android:onClick="returnToTheMain"/>
 
 </LinearLayout><!-- From: file:/C:/Users/Papi%20lexus/Desktop/project-guiri/project-guiri/GUIDI/ParseStarterProject/src/main/res/layout/activity_match_list.xml -->

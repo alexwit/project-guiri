@@ -80,6 +80,8 @@
              />
         <activity android:name=".Requests" />
 
+
+        <!-- Can reseive push notification of the producer-->
         <service android:name="com.parse.PushService" />
 
         <receiver

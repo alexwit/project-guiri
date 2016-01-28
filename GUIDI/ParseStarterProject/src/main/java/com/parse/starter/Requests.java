@@ -7,32 +7,25 @@ import android.view.View;
 
 import com.parse.ParseObject;
 
+// Alex Wittebrood # 10288880
+
 public class Requests extends ListActivity implements OnDataChanged {
 
     RequestAdapter requestAdapter;
     Search search;
-
-
-    // Todo can be put directly into main activity ?
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requests);
 
-
-//        queryList = new ArrayList<ParseQuery<ParseUser>>();
-//        superQuery = ParseQuery.getQuery("_User");
-
         ParseObject.registerSubclass(DataBase.class);
 
         search = new Search();
 
-
-        requestAdapter = new RequestAdapter(this, search.searchMatch(), this);
-
-
+        requestAdapter = new RequestAdapter(this, search.searchRequests(), this);
+        
+        // Creates the list with the correct input
         setListAdapter(requestAdapter);
         requestAdapter.loadObjects();
 
@@ -46,12 +39,12 @@ public class Requests extends ListActivity implements OnDataChanged {
     }
 
 
-
+    // Checks if data is changed for the query, if so it refreshes the list view
 
     @Override
     public void DataChanged() {
         requestAdapter.notifyDataSetChanged();
-        requestAdapter = new RequestAdapter(this, search.searchMatch(), this);
+        requestAdapter = new RequestAdapter(this, search.searchRequests(), this);
         setListAdapter(requestAdapter);
         requestAdapter.loadObjects();
     }

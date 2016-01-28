@@ -37,12 +37,13 @@ public class RequestAdapter extends ParseQueryAdapter<ParseObject> {
 
         super.getItemView(object, v, parent);
 
-        // Sets Tourist information for the guide
+
         TextView titleTextView = (TextView) v.findViewById(R.id.account_name_description);
         TextView ageTextView = (TextView) v.findViewById(R.id.account_age_description);
         TextView cityTextView = (TextView) v.findViewById(R.id.account_city_description);
         TextView countryTextView = (TextView)v.findViewById(R.id.account_country_description);
 
+        // Sets Tourist information for the guide
         titleTextView.setText(object.getString("TouristName") + " " + object.get("TouristSurname"));
         ageTextView.setText(String.valueOf(object.getInt("TouristAge")));
         cityTextView.setText(String.valueOf(object.getString("TouristCity")));

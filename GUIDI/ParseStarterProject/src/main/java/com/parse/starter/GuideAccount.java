@@ -18,6 +18,8 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+// Alex Wittebrood # 10288880
+
 public class GuideAccount extends AppCompatActivity {
 
     TextView mNameUser;
@@ -51,20 +53,20 @@ public class GuideAccount extends AppCompatActivity {
         mInfoUser =(TextView) findViewById(R.id.account_persinfo);
 
         emailCurrUser = ParseUser.getCurrentUser().getEmail();
-        Log.i("guide ", "im here ");
+
         // Gets the account information of the inspected user
         ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
         query.getInBackground(objectId, new GetCallback<ParseObject>() {
             public void done(ParseObject object, ParseException e) {
                 if (e == null) {
+
                     nameGuideUser = object.getString("First_name");
                     surnameGuideUser = object.getString("Surname");
                     cityGuideUser = object.getString("City");
-                    Log.i("guide", "city " + cityGuideUser);
                     countryGuideUser = object.getString("Country");
                     eMailGuideUser = object.getString("email");
                     ageGuideUser = object.getInt("Age");
-
+                    // makes sure the input is not null
                     if (nameGuideUser != null) {
                         mNameUser.setText(nameGuideUser + " " + surnameGuideUser);
                     }
@@ -103,15 +105,23 @@ public class GuideAccount extends AppCompatActivity {
 
         // Creates new connection on Parse so the relation request is set.
         if(!sendRequest) {
+            // Puts the information of the two users in the set.
+            ParseUser currentUser =ParseUser.getCurrentUser();
             DataBase profile = new DataBase();
-            profile.put("UserReqId", ParseUser.getCurrentUser().getObjectId());
+
+            // sets users ID's
+            profile.put("UserReqId", currentUser.getObjectId());
             profile.put("GuideMatchId", objectId);
+
+            // sets info current user
             profile.put("Email", emailCurrUser);
-            profile.put("TouristName", ParseUser.getCurrentUser().get("First_name"));
-            profile.put("TouristSurname", ParseUser.getCurrentUser().get("Surname"));
-            profile.put("TouristAge", ParseUser.getCurrentUser().get("Age"));
-            profile.put("TouristCity", ParseUser.getCurrentUser().get("City"));
-            profile.put("TouristCountry", ParseUser.getCurrentUser().get("Country"));
+            profile.put("TouristName", currentUser.get("First_name"));
+            profile.put("TouristSurname", currentUser.get("Surname"));
+            profile.put("TouristAge", currentUser.get("Age"));
+            profile.put("TouristCity", currentUser.get("City"));
+            profile.put("TouristCountry", currentUser.get("Country"));
+
+            // sets info of the Guide
             profile.put("GuideName", nameGuideUser);
             profile.put("GuideSurname", surnameGuideUser);
             profile.put("GuideCity", cityGuideUser);
@@ -125,7 +135,7 @@ public class GuideAccount extends AppCompatActivity {
             acl.setPublicWriteAccess(true);
             profile.setACL(acl);
             profile.setAcceptUserFalse();
-            profile.setDecilinedUserFalse();
+            profile.setDeclinedUserFalse();
             profile.saveInBackground(new SaveCallback() {
                 public void done(ParseException e) {
                     if (e == null) {
@@ -133,7 +143,6 @@ public class GuideAccount extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Request send", Toast.LENGTH_SHORT).show();
                     } else {
                         // The save failed.
-
                         Toast.makeText(getApplicationContext(), "Failed to Save", Toast.LENGTH_SHORT).show();
                         Log.i("request save ", "error " + e);
                     }
@@ -146,7 +155,6 @@ public class GuideAccount extends AppCompatActivity {
             Toast.makeText(GuideAccount.this, "You've allready send an request", Toast.LENGTH_SHORT).show();
         }
     }
-
 
     public void returnToSearch(View view) {
         Intent i = new Intent(this, SearchList.class);
@@ -164,12 +172,9 @@ public class GuideAccount extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_Main){
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);

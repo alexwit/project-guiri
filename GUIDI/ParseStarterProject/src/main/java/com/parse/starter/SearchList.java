@@ -15,6 +15,8 @@ import com.parse.ParseUser;
 
 import java.util.ArrayList;
 
+// Alex Wittebrood # 10288880
+
 public class SearchList extends ListActivity{
 
 

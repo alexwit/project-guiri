@@ -59,6 +59,7 @@ public class MainActivity extends ActionBarActivity {
             Intent intent = new Intent(this, SearchList.class);
             intent.putExtra("City", mCityField.getText().toString());
             startActivity(intent);
+            finish();
         }
         else{
             Toast.makeText(MainActivity.this, "You did not enter a city!", Toast.LENGTH_SHORT).show();
@@ -72,16 +73,11 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
-    //todo make switch case
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_matches){
             Intent i = new Intent(MainActivity.this, MatchList.class);
             startActivity(i);

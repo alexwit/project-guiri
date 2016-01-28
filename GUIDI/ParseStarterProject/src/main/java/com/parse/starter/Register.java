@@ -11,13 +11,15 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+// Alex Wittebrood #10288880
+// http://michaelevans.org/blog/2013/08/14/tutorial-building-an-android-to-do-list-app-using-parse/
+
+
 public class Register extends AppCompatActivity {
     EditText mUsernameField;
     EditText mPasswordField;
     EditText mEmailField;
     Intent intent;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,7 @@ public class Register extends AppCompatActivity {
         mPasswordField = (EditText)findViewById(R.id.register_password);
         mEmailField = (EditText)findViewById(R.id.register_email);
     }
-    // makes sure input is given
+    // Trys to make an account in the Parse Database
     public void register(final View v) {
 
         v.setEnabled(false);

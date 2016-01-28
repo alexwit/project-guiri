@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.ParseObject;
 import com.parse.ParseUser;
@@ -40,12 +41,6 @@ public class Account extends ActionBarActivity {
 
         // gets account information of the current user
         final ParseUser currentUser = ParseUser.getCurrentUser();
-
-//        ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
-//        query.getInBackground(ParseUser.getCurrentUser().getObjectId(), new GetCallback<ParseObject>() {
-//            @Override
-//            public void done(ParseObject object, ParseException e) {
-//                if(e==null){
                 if(currentUser!=null){
                     // checks if information is not null
                     name = currentUser.getString("First_name");
@@ -53,7 +48,6 @@ public class Account extends ActionBarActivity {
                     if (name != null) {
                         mNameUser.setText(name + " " + surname);
                     }
-
                     age = currentUser.getInt("Age");
                     if (age != null) {
                         mAgeUser.setText(age.toString());
@@ -75,7 +69,11 @@ public class Account extends ActionBarActivity {
                     }
                 }
                 else{
-                    Intent i = new Intent(this, Login.class);}
+                    Toast.makeText(Account.this, "You need to log in first!", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(this, Login.class);
+                    startActivity(i);
+                    finish();
+                }
             }
 
     public void returnMain(View v){

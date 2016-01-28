@@ -69,7 +69,7 @@ public class ChangeAccount extends ActionBarActivity {
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (mNameUser.getText().length() > 0 ) {
             currentUser.put("First_name", mNameUser.getText().toString());
-        }else if(mSurnameUser.getText().length() > 0){
+        } else if(mSurnameUser.getText().length() > 0){
             currentUser.put("Surname", mSurnameUser.getText().toString());
         } else if (mAgeUser.getText().length() > 0) {
             currentUser.put("Age", Integer.parseInt(mAgeUser.getText().toString()));
@@ -77,11 +77,13 @@ public class ChangeAccount extends ActionBarActivity {
             currentUser.put("City", mCityUser.getText().toString());
         } else if (mCountryUser.getText().length() > 0 ) {
             currentUser.put("Country", mCountryUser.getText().toString());
-        } else if (mPerInfo.getText().length() > 0 || mPerInfo.getText().toString().equals("Write something about yourself..")) {
+        }
+        if (mPerInfo.getText().toString().length() > 0) {
+            Log.i("chage", "im in the " + mPerInfo.getText().toString());
             currentUser.put("PersInfo", mPerInfo.getText().toString());
         }
 
-
+        // Saves Changed information and checks for errors
         currentUser.saveInBackground(new SaveCallback() {
             public void done(ParseException e) {
                 if (e == null) {

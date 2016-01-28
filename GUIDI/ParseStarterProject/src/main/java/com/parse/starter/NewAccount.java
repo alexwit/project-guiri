@@ -3,7 +3,6 @@ package com.parse.starter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -25,7 +24,6 @@ public class NewAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_account);
 
-
         mFirstNameField = (EditText)findViewById(R.id.newaccount_firstname);
         mSurnameField = (EditText)findViewById(R.id.newaccount_surname);
         mAgeUserField = (EditText)findViewById(R.id.newaccount_age);
@@ -45,7 +43,6 @@ public class NewAccount extends AppCompatActivity {
             return;}
 
         ParseUser currentUser = ParseUser.getCurrentUser();
-        Log.i("New Account", currentUser.toString());
         if(currentUser != null) {
             currentUser.put("First_name", mFirstNameField.getText().toString());
             currentUser.put("Surname", (mSurnameField.getText().toString()));

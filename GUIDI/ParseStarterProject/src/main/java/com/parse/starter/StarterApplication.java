@@ -14,26 +14,25 @@ import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseInstallation;
 import com.parse.ParseObject;
-
+// Alex Wittebrood # 10288880
+// Created from the Parse website
 
 public class StarterApplication extends Application {
 
-  @Override
-  public void onCreate() {
-    super.onCreate();
+     @Override
+    public void onCreate() {
+        super.onCreate();
 
-    // Enable Local Datastore.
-    Parse.enableLocalDatastore(this);
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
 
+        ParseObject.registerSubclass(DataBase.class);
+        Parse.initialize(this);
+        ParseInstallation.getCurrentInstallation().saveInBackground();
 
-    ParseObject.registerSubclass(DataBase.class);
-    // Add your initialization code here
-    Parse.initialize(this);
-    ParseInstallation.getCurrentInstallation().saveInBackground();
+        ParseACL defaultACL = new ParseACL();
 
-    ParseACL defaultACL = new ParseACL();
-    // Optionally enable public read access.
-    // defaultACL.setPublicReadAccess(true);
-    ParseACL.setDefaultACL(defaultACL, true);
-  }
+        defaultACL.setPublicReadAccess(true);
+        ParseACL.setDefaultACL(defaultACL, true);
+    }
 }

@@ -8,50 +8,19 @@ package com.parse.starter;
 
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
-import com.parse.ParseUser;
 
-
+// Alex Wittebrood #10288880
 //http://blog.parse.com/announcements/parse-on-android-just-got-classier/
-
+// Sets
 @ParseClassName("DataBase")
 public class DataBase extends ParseObject{
     public DataBase(){
 
     }
 
-    public String getId() {
-        return getObjectId();
-    }
-
-
-    public Integer getAge() {
-        return getInt("age");
-    }
-
-    public void setAge(Integer age) {put("age", age); }
-
-    public String getName(){
-        return getString("name");
-    }
-
     public void setAcceptUserFalse() {put("Acceptuser", false);}
 
-    public void setDecilinedUserFalse() {put("Declineduser", false);}
+    public void setDeclinedUserFalse() {put("Declineduser", false);}
 
-    public void setName(String name){
-        put("name", name);
-    }
-
-    public void setCity(String city){put("city", city);}
-
-    public String getCity(){return getString("city");}
-
-    public ParseUser getUser() {
-        return getParseUser("User");
-    }
-
-    public void setUser(ParseUser user) {
-        put("user", user);
-    }
 }
 

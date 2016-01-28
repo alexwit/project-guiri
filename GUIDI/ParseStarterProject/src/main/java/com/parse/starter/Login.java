@@ -3,7 +3,6 @@ package com.parse.starter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -12,9 +11,11 @@ import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 
+// Alex Wittebrood # 10288880
+
 public class Login extends AppCompatActivity {
 
-    EditText mEmailField;
+    EditText mUsernameField;
     EditText mPasswordField;
 
     @Override
@@ -22,15 +23,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        Log.i("login", "user " + currentUser);
-
-
-        mEmailField = (EditText)findViewById(R.id.register_username);
+        mUsernameField = (EditText)findViewById(R.id.register_username);
         mPasswordField = (EditText)findViewById(R.id.register_password);
-
-
-        //todo Check user loged in and add Username in stead of email
     }
 
     public void goToRegister(View v){
@@ -40,9 +34,10 @@ public class Login extends AppCompatActivity {
     }
 
 
+    // Checks login data with parse User database
     public void logIn(final View v){
         v.setEnabled(false);
-        ParseUser.logInInBackground(mEmailField.getText().toString(), mPasswordField.getText().toString(), new LogInCallback() {
+        ParseUser.logInInBackground(mUsernameField.getText().toString(), mPasswordField.getText().toString(), new LogInCallback() {
             @Override
             public void done(ParseUser user, ParseException e) {
                 if (user != null) {
