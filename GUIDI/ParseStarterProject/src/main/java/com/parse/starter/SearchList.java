@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.parse.ParseObject;
@@ -50,24 +49,24 @@ public class SearchList extends ListActivity{
 
     }
 
-    public void returntheMain(){
+    public void returntheMain(View view){
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
-
+        finish();
     }
 
 
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        // TODO Auto-generated method stub
-        super.onListItemClick(l, v, position, id);
-        Log.i("SearchList", "inside listitemclick");
-        String itemId = objectID.get(position);
-        Log.i("Searchlist", "itemID " + itemId);
-        Intent intent = new Intent(this, GuideAccount.class);
-        intent.putExtra("ID", itemId);
-        startActivity(intent);
-    }
+//    @Override
+//    protected void onListItemClick(ListView l, View v, int position, long id) {
+//        // TODO Auto-generated method stub
+//        super.onListItemClick(l, v, position, id);
+//        Log.i("SearchList", "inside listitemclick");
+//        String itemId = objectID.get(position);
+//        Log.i("Searchlist", "itemID " + itemId);
+//        Intent intent = new Intent(this, GuideAccount.class);
+//        intent.putExtra("ID", itemId);
+//        startActivity(intent);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -89,17 +88,20 @@ public class SearchList extends ListActivity{
         if(id == R.id.action_Main){
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
+            finish();
         }
 
         if (id == R.id.action_matches){
-            Intent i = new Intent(this, AcceptedGuide.class);
+            Intent i = new Intent(this, MatchList.class);
             startActivity(i);
+            finish();
         }
 
         if (id == R.id.action_account) {
 
             Intent i = new Intent(this, Account.class);
             startActivity(i);
+            finish();
         }
         if(id == R.id.action_logout){
 
@@ -111,6 +113,7 @@ public class SearchList extends ListActivity{
         if(id== R.id.action_request){
             Intent i = new Intent(this, Requests.class);
             startActivity(i);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:9:1-113:12
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:9:1-109:12
 	xmlns:android
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:9:11-69
 	package
@@ -48,7 +48,7 @@ ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseSt
 	android:name
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:29:22-77
 application
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:31:5-111:19
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:31:5-107:19
 MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.parse:parseui-widget-android:0.0.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.parse\parseui-widget-android\0.0.1\AndroidManifest.xml:31:5-20
@@ -101,89 +101,89 @@ ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseSt
 	android:name
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:56:13-34
 activity#com.parse.starter.Register
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:59:9-65:20
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:59:9-61:20
 	android:name
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:59:19-43
 activity#com.parse.starter.Account
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:66:9-69:15
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:62:9-65:15
 	android:label
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:68:13-36
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:64:13-36
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:67:13-36
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:63:13-36
 activity#com.parse.starter.ChangeAccount
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:70:9-72:15
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:66:9-68:15
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:71:13-42
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:67:13-42
 activity#com.parse.starter.NewAccount
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:73:9-76:15
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:69:9-72:15
 	android:label
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:75:13-40
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:71:13-40
+	android:name
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:70:13-39
+activity#com.parse.starter.SearchList
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:73:9-76:14
+	android:label
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:75:13-43
 	android:name
 		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:74:13-39
-activity#com.parse.starter.SearchList
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:77:9-80:14
-	android:label
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:79:13-43
-	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:78:13-39
 activity#com.parse.starter.GuideAccount
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:81:9-84:16
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:77:9-80:16
 	android:label
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:83:13-42
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:79:13-42
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:82:13-41
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:78:13-41
 activity#com.parse.starter.Requests
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:85:9-46
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:81:9-46
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:85:19-43
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:81:19-43
 service#com.parse.PushService
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:87:9-57
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:83:9-57
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:87:18-54
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:83:18-54
 receiver#com.parse.ParsePushBroadcastReceiver
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:89:9-97:20
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:85:9-93:20
 	android:exported
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:91:13-37
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:87:13-37
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:90:13-64
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:86:13-64
 intent-filter#com.parse.push.intent.DELETE+com.parse.push.intent.OPEN+com.parse.push.intent.RECEIVE
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:92:13-96:29
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:88:13-92:29
 action#com.parse.push.intent.RECEIVE
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:93:17-72
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:89:17-72
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:93:25-69
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:89:25-69
 action#com.parse.push.intent.DELETE
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:94:17-71
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:90:17-71
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:94:25-68
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:90:25-68
 action#com.parse.push.intent.OPEN
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:95:17-69
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:91:17-69
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:95:25-66
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:91:25-66
 receiver#com.parse.GcmBroadcastReceiver
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:98:9-108:20
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:94:9-104:20
 	android:permission
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:100:13-73
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:96:13-73
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:99:13-58
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:95:13-58
 intent-filter#com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION+com.parse.starter
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:101:13-107:29
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:97:13-103:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:102:17-81
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:98:17-81
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:102:25-78
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:98:25-78
 action#com.google.android.c2dm.intent.REGISTRATION
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:103:17-86
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:99:17-86
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:103:25-83
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:99:25-83
 category#com.parse.starter
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:106:17-62
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:102:17-62
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:106:27-59
-activity#com.parse.starter.AcceptedGuide
-ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:110:9-60
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:102:27-59
+activity#com.parse.starter.MatchList
+ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:106:9-56
 	android:name
-		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:110:19-48
+		ADDED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml:106:19-44
 uses-sdk
 INJECTED from C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Papi lexus\Desktop\project-guiri\project-guiri\GUIDI\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\AndroidManifest.xml:20:5-43

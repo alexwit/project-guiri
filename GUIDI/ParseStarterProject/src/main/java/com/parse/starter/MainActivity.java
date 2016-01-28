@@ -11,7 +11,6 @@ package com.parse.starter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,25 +21,21 @@ import android.widget.Toast;
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
 
-import java.util.List;
 
-
+// Alex Wittebrood #10288880
+// Let you search for other user
 public class MainActivity extends ActionBarActivity {
 
-    Search search;
+
     EditText mCityField;
     TextView mUsername;
-    List<ParseUser> mAccountList;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Checks if a user was allready logged in
         ParseUser currentUser = ParseUser.getCurrentUser();
-        Log.i("main ", "username " + currentUser);
         if(currentUser == null){
             Intent i = new Intent(this, Login.class);
             startActivity(i);
@@ -48,7 +43,6 @@ public class MainActivity extends ActionBarActivity {
         }
 
         setContentView(R.layout.activity_main);
-
         ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
 
@@ -57,8 +51,6 @@ public class MainActivity extends ActionBarActivity {
         mUsername.setText(currentUser.getUsername());
     }
 
-
-    // todo Make a city adapter
 
     public void searchCity(View v){
 
@@ -91,13 +83,15 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_matches){
-            Intent i = new Intent(MainActivity.this, AcceptedGuide.class);
+            Intent i = new Intent(MainActivity.this, MatchList.class);
             startActivity(i);
+            finish();
         }
 
         if (id == R.id.action_account) {
             Intent i = new Intent(MainActivity.this, Account.class);
             startActivity(i);
+            finish();
         }
         if(id == R.id.action_logout){
 
@@ -109,6 +103,7 @@ public class MainActivity extends ActionBarActivity {
         if(id== R.id.action_request){
             Intent i = new Intent(MainActivity.this, Requests.class);
             startActivity(i);
+            finish();
         }
 
       return super.onOptionsItemSelected(item);

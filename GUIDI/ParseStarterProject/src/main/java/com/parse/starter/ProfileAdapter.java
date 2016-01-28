@@ -9,21 +9,17 @@ import android.widget.TextView;
 
 import com.parse.ParseObject;
 import com.parse.ParseQueryAdapter;
-import com.parse.ParseUser;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Papi lexus on 14-1-2016.
  */
-
+// Alex Wittebrood # 10288880
 // http://michaelevans.org/blog/2013/08/14/tutorial-building-an-android-to-do-list-app-using-parse/
 
 public class ProfileAdapter extends ParseQueryAdapter<ParseObject> {
 
-
-    private List<ParseUser> mUserList;
 
     public ProfileAdapter(Context context, QueryFactory<ParseObject> queryFactory) {
 
@@ -33,8 +29,7 @@ public class ProfileAdapter extends ParseQueryAdapter<ParseObject> {
 
     ArrayList<String> objectID = new ArrayList<>();
 
-    // Customize the layout by overriding getItemView
-
+    // Customizes the layout and functionallity of the specific items
     @Override
     public View getItemView(final ParseObject object, View v, ViewGroup parent) {
         if (v == null) {

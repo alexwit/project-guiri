@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.parse.ParseACL;
 import com.parse.ParseUser;
 
 public class NewAccount extends AppCompatActivity {
@@ -51,12 +52,14 @@ public class NewAccount extends AppCompatActivity {
             currentUser.put("Age",Integer.parseInt(mAgeUserField.getText().toString()));
             currentUser.put("Country", mCountryUserField.getText().toString());
             currentUser.put("City", mCityUserField.getText().toString());
+            currentUser.setACL(new ParseACL(ParseUser.getCurrentUser()));
             currentUser.saveInBackground();
         }
         else{
             Toast.makeText(NewAccount.this, "There is something wrong!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, Login.class);
             startActivity(intent);
+            finish();
         }
 
 

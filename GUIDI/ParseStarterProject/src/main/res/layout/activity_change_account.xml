@@ -13,10 +13,10 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:padding="15dp"
+            android:padding="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username:"
+            android:text="Name:"
             android:textSize="25dp" />
 
         <EditText
@@ -27,6 +27,28 @@
             android:layout_weight="1" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:padding="5dp"
+            android:text="Surname:"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/account_surname"
+            android:textSize="25dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -65,7 +87,9 @@
             android:textSize="25dp"
             android:layout_height="wrap_content"
             android:id="@+id/account_city"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:maxLength="15"
+            android:maxLines="1" />
 
     </LinearLayout>
 
@@ -86,22 +110,28 @@
             android:textSize="25dp"
             android:layout_height="wrap_content"
             android:id="@+id/account_country"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:maxLines="1" />
 
     </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <CheckBox
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/CB_art"
-            android:clickable="true"
-            android:text="Art"
-            android:checked="false" />
+            android:text="Personal info:"/>
+
+        <EditText
+            android:id="@+id/account_persinfo"
+            android:layout_width="360dp"
+            android:layout_height="100dp"
+            android:hint="Write something about yourself.."
+            android:maxLength="180" />
 
     </LinearLayout>
 

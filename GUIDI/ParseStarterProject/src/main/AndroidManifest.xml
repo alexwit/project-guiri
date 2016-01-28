@@ -57,11 +57,7 @@
             android:label="@string/title_activity_login"
              />
         <activity android:name=".Register">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+           
         </activity>
         <activity
             android:name=".Account"
@@ -107,7 +103,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".AcceptedGuide"></activity>
+        <activity android:name=".MatchList"></activity>
     </application>
 
 </manifest>

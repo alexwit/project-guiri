@@ -24,9 +24,9 @@ public class GuideAccount extends AppCompatActivity {
     TextView mAgeUser;
     TextView mCityUser;
     TextView mCountryUser;
+    TextView mInfoUser;
 
     String nameGuideUser;
-    Integer age;
     String objectId;
     String emailCurrUser;
     String eMailGuideUser;
@@ -34,6 +34,8 @@ public class GuideAccount extends AppCompatActivity {
     String cityGuideUser;
     String countryGuideUser;
     Integer ageGuideUser;
+    String GuideInfo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +44,18 @@ public class GuideAccount extends AppCompatActivity {
         ParseObject.registerSubclass(DataBase.class);
 
         objectId = getIntent().getExtras().getString("ID").toString();
-
         mNameUser = (TextView) findViewById(R.id.account_username);
         mAgeUser = (TextView) findViewById(R.id.account_age);
         mCityUser = (TextView) findViewById(R.id.account_city);
         mCountryUser = (TextView) findViewById(R.id.account_country);
+        mInfoUser =(TextView) findViewById(R.id.account_persinfo);
+
         emailCurrUser = ParseUser.getCurrentUser().getEmail();
         Log.i("guide ", "im here ");
         // Gets the account information of the inspected user
         ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
         query.getInBackground(objectId, new GetCallback<ParseObject>() {
             public void done(ParseObject object, ParseException e) {
-                // todo make sure that no input needed to be checked
                 if (e == null) {
                     nameGuideUser = object.getString("First_name");
                     surnameGuideUser = object.getString("Surname");
@@ -63,7 +65,6 @@ public class GuideAccount extends AppCompatActivity {
                     eMailGuideUser = object.getString("email");
                     ageGuideUser = object.getInt("Age");
 
-                    // todo Checks kunnen eruit
                     if (nameGuideUser != null) {
                         mNameUser.setText(nameGuideUser + " " + surnameGuideUser);
                     }
@@ -75,6 +76,12 @@ public class GuideAccount extends AppCompatActivity {
                     }
                     if(countryGuideUser !=null){
                         mCountryUser.setText(countryGuideUser);
+                    }
+                    if(GuideInfo !=null){
+                        mInfoUser.setText(GuideInfo);
+                    }
+                    else{
+                        mInfoUser.setText("No personal info to show");
                     }
 
                 }
@@ -90,6 +97,7 @@ public class GuideAccount extends AppCompatActivity {
 
     // makes sure that the request can only be send once
     private boolean sendRequest = false;
+
 
     public void sendRequest(View view) {
 
@@ -140,38 +148,12 @@ public class GuideAccount extends AppCompatActivity {
     }
 
 
+    public void returnToSearch(View view) {
+        Intent i = new Intent(this, SearchList.class);
+        startActivity(i);
+        finish();
+    }
 
-
-
-    public void sendEmail(View view) {
-
-
-                // todo  Haal er misschien maar uit
-//        JSONObject data = new JSONObject();
-//        try {
-//            data.put("action", "com.bt.yana.GOT_MESSAGE");
-//            data.put("from", ParseUser.getCurrentUser().getUsername());
-//        }catch (Exception e){
-//            e.printStackTrace();
-//            return;
-//        }
-//
-//
-//        ParsePush parsePush = new ParsePush();
-//        parsePush.setData(data);
-//
-//        ParseQuery<ParseInstallation> parseQuery = ParseQuery.getQuery(ParseInstallation.class);
-//        if(toUser!=null) {
-//            parseQuery.whereEqualTo("username", toUser);
-//            parsePush.setQuery(parseQuery);
-//            parsePush.sendInBackground();
-//        }
-
-
-            }
-
-            public void getReviews(View view) {
-            }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -191,26 +173,31 @@ public class GuideAccount extends AppCompatActivity {
         if (id == R.id.action_Main){
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
+            finish();
         }
 
         if (id == R.id.action_account) {
 
             Intent i = new Intent(this, Account.class);
             startActivity(i);
+            finish();
         }
         if (id== R.id.action_request){
             Intent i = new Intent(this, Requests.class);
             startActivity(i);
+            finish();
         }
         if (id== R.id.action_matches){
-            Intent i = new Intent(this, AcceptedGuide.class);
+            Intent i = new Intent(this, MatchList.class);
             startActivity(i);
+            finish();
         }
 
         if(id == R.id.action_logout){
             ParseUser.logOut();
             Intent i = new Intent(this, Login.class);
             startActivity(i);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

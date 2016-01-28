@@ -61,13 +61,6 @@
             android:name="com.parse.starter.Login"
             android:label="@string/title_activity_login" />
         <activity android:name="com.parse.starter.Register" >
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name="com.parse.starter.Account"
@@ -107,7 +100,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name="com.parse.starter.AcceptedGuide" />
+        <activity android:name="com.parse.starter.MatchList" />
     </application>
 
 </manifest>
