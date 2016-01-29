@@ -17,16 +17,16 @@ And the fun part it works visa versa ofcourse, because each tourist is a guide i
 ![alt text](https://github.com/alexwit/project-guiri/blob/master/doc/newClassOverview%20(1).JPG "New Class Overview")
 
 ### Activities
-*Register: This is were you can create your own unique parse account
-*Login: If no User is logged in yet, here is were you can login
-*NewAccount: Extra information is needed when a new user joins
-*MainActivity: This is where the search takes place
-*Requests: In the Requests can the Guide see an overview with all user requests 
-*SearchList: Overview with all accounts of that specific city 
-*GuideAccount: Overview with the guides information
-*AcceptGuide: Overview with all requests that the guide accepted
-*Account: Overview with your own account details
-*ChangeAccount: possibility to change account information
+*Register: This is were you can create your own unique parse account.
+*Login: If no User is logged in yet, here is were you can login.
+*NewAccount: Extra information is needed when a new user joins.
+*MainActivity: This is where the search takes place.
+*Requests: In the Requests can the Guide see an overview with all user requests. 
+*SearchList: Overview with all accounts of that specific city. 
+*GuideAccount: Overview with the guides information.
+*AcceptGuide: Overview with all requests that the guide accepted.
+*Account: Overview with your own account details.
+*ChangeAccount: possibility to change account information.
 
 ### Classes
 * Register - Creates an unique account in the Parse Back-end and checks if the input is correct.
