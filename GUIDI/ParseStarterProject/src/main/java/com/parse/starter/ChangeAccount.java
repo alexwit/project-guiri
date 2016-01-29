@@ -69,17 +69,15 @@ public class ChangeAccount extends ActionBarActivity {
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (mNameUser.getText().length() > 0 ) {
             currentUser.put("First_name", mNameUser.getText().toString());
-        } else if(mSurnameUser.getText().length() > 0){
+        } if(mSurnameUser.getText().length() > 0){
             currentUser.put("Surname", mSurnameUser.getText().toString());
-        } else if (mAgeUser.getText().length() > 0) {
+        } if (mAgeUser.getText().length() > 0) {
             currentUser.put("Age", Integer.parseInt(mAgeUser.getText().toString()));
-        } else if (mCityUser.getText().length() > 0 ) {
+        } if (mCityUser.getText().length() > 0 ) {
             currentUser.put("City", mCityUser.getText().toString());
-        } else if (mCountryUser.getText().length() > 0 ) {
+        } if (mCountryUser.getText().length() > 0 ) {
             currentUser.put("Country", mCountryUser.getText().toString());
-        }
-        if (mPerInfo.getText().toString().length() > 0) {
-            Log.i("chage", "im in the " + mPerInfo.getText().toString());
+        } if (mPerInfo.getText().toString().length() > 0) {
             currentUser.put("PersInfo", mPerInfo.getText().toString());
         }
 
