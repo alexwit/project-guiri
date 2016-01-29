@@ -52,7 +52,7 @@ And the fun part it works visa versa ofcourse, because each tourist is a guide i
 
 In the picture above you can see everything that happens if you allready have an account at the GuidiConnect app.
 
-![alt text](https://github.com/alexwit/project-guiri/blob/master/doc/overzichtrequestmatches.JPG "Request and matches screens")
+![alt text](https://github.com/alexwit/project-guiri/blob/master/doc/overzichtrequestmatches%20(1).JPG "Request and matches screens")
 
 In the picture above you can see the possibility to send an email when you accept a request of a tourist user.
 
