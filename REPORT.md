@@ -14,7 +14,7 @@ And the fun part it works visa versa ofcourse, because each tourist is a guide i
 #### Overview with the classes and the methods. 
 
 
-![alt text](doc/BestClassOverview(1).png "New Class Overview")
+![alt text](https://github.com/alexwit/project-guiri/blob/master/doc/newClassOverview%20(1).JPG "New Class Overview")
 
 ### Activities
 *Register: This is were you can create your own unique parse account
@@ -48,11 +48,11 @@ And the fun part it works visa versa ofcourse, because each tourist is a guide i
 
 #### Sketches that show the UI 
 
-![alt text](doc/Overzicht screen.png "Overview Start screens")
+![alt text](https://github.com/alexwit/project-guiri/blob/master/doc/Overzichtscreens.jpg "Overview Start screens")
 
 In the picture above you can see everything that happens if you allready have an account at the GuidiConnect app.
 
-![alt text](doc/overzichtrequestmatches(1).png "Request and matches screens")
+![alt text](https://github.com/alexwit/project-guiri/blob/master/doc/overzichtrequestmatches.JPG "Request and matches screens")
 
 In the picture above you can see the possibility to send an email when you accept a request of a tourist user.
 
